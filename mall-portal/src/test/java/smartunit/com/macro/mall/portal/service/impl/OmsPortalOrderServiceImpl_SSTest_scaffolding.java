@@ -74,7 +74,6 @@ public class OmsPortalOrderServiceImpl_SSTest_scaffolding {
   public static void setSystemProperties() {
  
     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
-    java.lang.System.setProperty("logback.configurationFile", "logback-ctg.xml"); 
     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
   }
   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
@@ -107,6 +106,7 @@ public class OmsPortalOrderServiceImpl_SSTest_scaffolding {
     mock(Class.forName("com.macro.mall.portal.service.UmsMemberCouponService", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
     mock(Class.forName("com.macro.mall.portal.service.UmsMemberReceiveAddressService", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
     mock(Class.forName("com.macro.mall.portal.service.UmsMemberService", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
+    mock(Class.forName("java.util.Date", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
   }
 
   private static void initializeClasses() {
