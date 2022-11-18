@@ -243,7 +243,10 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     }
 
     @Override
-    public Integer paySuccess(Long orderId, Integer payType) {
+    public Integer paySuccess(Long orderId, Integer payType) throws Exception {
+        if (payType < 0 || payType > 2) {
+            throw new Exception("支付状态不正确");
+        }
         //修改订单支付状态
         OmsOrder order = new OmsOrder();
         order.setId(orderId);
