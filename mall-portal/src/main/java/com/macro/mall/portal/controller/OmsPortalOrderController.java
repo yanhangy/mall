@@ -47,8 +47,13 @@ public class OmsPortalOrderController {
     @RequestMapping(value = "/paySuccess", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult paySuccess(@RequestParam Long orderId,@RequestParam Integer payType) {
-        Integer count = portalOrderService.paySuccess(orderId,payType);
-        return CommonResult.success(count, "支付成功");
+        try {
+            Integer count = portalOrderService.paySuccess(orderId,payType);
+            return CommonResult.success(count, "支付成功");
+        } catch (Exception e) {
+            return CommonResult.failed("支付失败");
+        }
+
     }
 
     @ApiOperation("自动取消超时订单")
