@@ -1595,32 +1595,4 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       assertEquals(1, (int)commonPage0.getTotalPage());
   }
 
-  @Test(timeout = 4000)
-  public void test_paySuccess_41()  throws Throwable  {
-      //caseID:baaa87f2cf8a4fe993a62da5dab42462
-      //CoveredLines: [33, 248, 249, 250, 251, 252, 253, 255, 256, 257]
-      //Input_0_Long: 0L
-      //Input_1_Integer: 4
-      //Assert: assertEquals(0, (int)method_result);
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      //mock omsOrderMapper0
-      OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(35).when(omsOrderMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.OmsOrder.class));
-      //mock omsOrderDetail0
-      OmsOrderDetail omsOrderDetail0 = mock(OmsOrderDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock portalOrderDao0
-      PortalOrderDao portalOrderDao0 = mock(PortalOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(omsOrderDetail0).when(portalOrderDao0).getDetail(anyLong());
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "portalOrderDao", (Object) portalOrderDao0);
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
-      Long long0 = new Long(0L);
-      Integer integer0 = new Integer(4);
-      
-      //Call method: paySuccess
-      Integer integer1 = omsPortalOrderServiceImpl0.paySuccess(long0, integer0);
-      
-      //Test Result Assert
-      assertEquals(0, (int)integer1);
   }
-}
