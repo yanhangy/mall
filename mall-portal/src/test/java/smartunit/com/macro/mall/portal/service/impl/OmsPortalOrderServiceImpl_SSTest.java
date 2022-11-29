@@ -59,152 +59,184 @@ import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
 @RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
 public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_SSTest_scaffolding {
-// allCoveredLines:[33, 71, 73, 74, 75, 77, 78, 80, 81, 83, 85, 86, 88, 89, 90, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 124, 126, 127, 128, 131, 132, 133, 136, 139, 141, 142, 143, 146, 147, 148, 149, 159, 161, 163, 164, 165, 166, 167, 168, 169, 170, 172, 173, 175, 176, 177, 179, 180, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 216, 220, 221, 222, 223, 224, 225, 227, 228, 231, 232, 233, 236, 238, 239, 240, 241, 242, 248, 249, 250, 251, 252, 253, 255, 256, 257, 262, 263, 265, 266, 267, 270, 271, 272, 273, 274, 275, 277, 279, 281, 282, 283, 285, 286, 292, 293, 294, 295, 296, 298, 299, 301, 302, 303, 304, 305, 307, 308, 311, 313, 314, 315, 318, 323, 324, 326, 327, 331, 332, 333, 334, 336, 337, 339, 340, 341, 342, 343, 347, 350, 351, 352, 353, 354, 355, 356, 357, 359, 360, 361, 363, 364, 365, 366, 367, 368, 369, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 390, 391, 392, 393, 394, 395, 396, 397, 402, 403, 404, 405, 407, 408, 409, 411, 413, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 430, 432, 439, 440, 441, 442, 443, 444, 450, 451, 452, 453, 454, 461, 462, 463, 464, 465, 476, 478, 479, 480, 481, 482, 483, 484, 485, 486, 488, 491, 493, 494, 495, 496, 497, 498, 499, 505, 506, 507, 508, 509, 510, 511, 512, 514, 522, 523, 524, 525, 526, 527, 534, 535, 536, 537, 539, 540, 547, 548, 549, 550, 552, 553, 560, 561, 562, 563, 565, 566, 578, 580, 581, 585, 586, 588, 591, 592, 595, 596, 597, 598, 600, 610, 611, 613, 614, 616, 617, 618, 620, 621, 623, 631, 632, 634, 635, 636, 637, 647, 648, 649, 650, 651, 652, 653, 660, 661, 662, 663, 664, 665, 666, 667, 671, 673, 683, 684, 685, 686, 688, 689, 696, 697, 698, 699, 700, 707, 708, 709, 710, 711, 712, 718, 719, 720, 722, 723, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741]
+// allCoveredLines:[33, 71, 73, 74, 75, 77, 78, 80, 81, 83, 85, 86, 88, 89, 90, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 124, 126, 127, 128, 131, 132, 133, 136, 139, 141, 142, 143, 146, 147, 148, 149, 159, 161, 163, 164, 165, 166, 167, 168, 169, 170, 172, 173, 175, 176, 177, 179, 180, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 216, 220, 221, 222, 223, 224, 225, 227, 228, 231, 232, 233, 236, 238, 239, 240, 241, 242, 247, 248, 251, 252, 253, 254, 255, 256, 258, 259, 260, 265, 266, 268, 269, 270, 273, 274, 275, 276, 277, 278, 280, 282, 284, 285, 286, 288, 289, 295, 296, 297, 298, 299, 301, 302, 304, 305, 306, 307, 308, 310, 311, 314, 316, 317, 318, 321, 326, 327, 329, 330, 334, 335, 336, 337, 339, 340, 342, 343, 344, 345, 346, 350, 353, 354, 355, 356, 357, 358, 359, 360, 362, 363, 364, 366, 367, 368, 369, 370, 371, 372, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 393, 394, 395, 396, 397, 398, 399, 400, 405, 406, 407, 408, 410, 411, 412, 414, 416, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 433, 435, 442, 443, 444, 445, 446, 447, 453, 454, 455, 456, 457, 464, 465, 466, 467, 468, 479, 481, 482, 483, 484, 485, 486, 487, 488, 489, 491, 494, 496, 497, 498, 499, 500, 501, 502, 508, 509, 510, 511, 512, 513, 514, 515, 517, 525, 526, 527, 528, 529, 530, 537, 538, 539, 540, 542, 543, 550, 551, 552, 553, 555, 556, 563, 564, 565, 566, 568, 569, 581, 583, 584, 588, 589, 591, 594, 595, 598, 599, 600, 601, 603, 613, 614, 616, 617, 619, 620, 621, 623, 624, 626, 634, 635, 637, 638, 639, 640, 650, 651, 652, 653, 654, 655, 656, 657, 660, 662, 663, 664, 665, 666, 667, 668, 669, 670, 672, 674, 676, 686, 687, 688, 689, 691, 692, 699, 700, 701, 702, 703, 710, 711, 712, 713, 714, 715, 721, 722, 723, 725, 726, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744]
 
   @Test(timeout = 4000)
-  public void test_calcCartAmount_00()  throws Throwable  {
-      //caseID:abc1164eda7163f2d9acd222dbd243fb
-      //CoveredLines: [33, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741]
-      //Input_0_CartPromotionItem>: stack0
-      //Assert: assertNotNull(method_result);
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Stack<CartPromotionItem> stack0 = new Stack<CartPromotionItem>();
-      Integer integer0 = new Integer(100);
-      BigDecimal bigDecimal0 = BigDecimal.ONE;
-      //mock cartPromotionItem0
-      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(cartPromotionItem0).getPrice();
-      doReturn(integer0, integer0).when(cartPromotionItem0).getQuantity();
-      doReturn(bigDecimal0).when(cartPromotionItem0).getReduceAmount();
-      stack0.add(cartPromotionItem0);
-      
-      //Call method: calcCartAmount
-      Object object0 = PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcCartAmount", (Object) stack0, (Class<?>) List.class);
-      
-      //Test Result Assert
-      assertNotNull(object0);
-  }
-
-  @Test(timeout = 4000)
-  public void test_calcCouponAmount_01()  throws Throwable  {
-      //caseID:2175e3f3037ec89fb1dddd42bb41529f
-      //CoveredLines: [33, 547, 548, 549, 552, 553]
-      //Input_0_OmsOrderItem>: arrayList0
-      //Assert: assertEquals((short)0, method_result.shortValue());
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
-      //mock omsOrderItem0
-      OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      arrayList0.add(omsOrderItem0);
-      
-      //Call method: calcCouponAmount
-      BigDecimal bigDecimal0 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcCouponAmount", (Object) arrayList0, (Class<?>) List.class);
-      
-      //Test Result Assert
-      assertEquals((short)0, bigDecimal0.shortValue());
-  }
-
-  @Test(timeout = 4000)
-  public void test_calcCouponAmount_02()  throws Throwable  {
-      //caseID:cf4216299e42e948aa837185c3e6118a
-      //CoveredLines: [33, 547, 548, 549, 550, 552, 553]
-      //Input_0_OmsOrderItem>: stack0
-      //Assert: assertEquals((short) (-30), method_result.shortValue());
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
-      BigDecimal bigDecimal0 = BigDecimal.TEN;
-      Integer integer0 = new Integer((-3));
-      //mock omsOrderItem0
-      OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0, bigDecimal0).when(omsOrderItem0).getCouponAmount();
-      doReturn(integer0).when(omsOrderItem0).getProductQuantity();
-      stack0.add(omsOrderItem0);
-      
-      //Call method: calcCouponAmount
-      BigDecimal bigDecimal1 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcCouponAmount", (Object) stack0, (Class<?>) List.class);
-      
-      //Test Result Assert
-      assertEquals((short) (-30), bigDecimal1.shortValue());
-  }
-
-  @Test(timeout = 4000)
-  public void test_calcIntegrationAmount_03()  throws Throwable  {
-      //caseID:e0031497af30b720e0eaf6dd3a5c01e3
-      //CoveredLines: [33, 534, 535, 536, 539, 540]
-      //Input_0_OmsOrderItem>: stack0
+  public void test_calcCouponAmount_00()  throws Throwable  {
+      //caseID:3a47329858ae1c4efcdd608ff5a695c3
+      //CoveredLines: [33, 550, 551, 552, 555, 556]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: linkedList0
       //Assert: assertEquals((byte)0, method_result.byteValue());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
+      LinkedList<OmsOrderItem> linkedList0 = new LinkedList<OmsOrderItem>();
       //mock omsOrderItem0
       OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      stack0.add(omsOrderItem0);
       
-      //Call method: calcIntegrationAmount
-      BigDecimal bigDecimal0 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcIntegrationAmount", (Object) stack0, (Class<?>) List.class);
+      linkedList0.add(omsOrderItem0);
+      
+      //Call method: calcCouponAmount
+      BigDecimal bigDecimal0 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcCouponAmount", (Object) linkedList0, (Class<?>) List.class);
       
       //Test Result Assert
       assertEquals((byte)0, bigDecimal0.byteValue());
   }
 
   @Test(timeout = 4000)
-  public void test_calcIntegrationAmount_04()  throws Throwable  {
-      //caseID:ccf350550f7964db36ffbbae5443f28c
-      //CoveredLines: [33, 534, 535, 536, 537, 539, 540]
-      //Input_0_OmsOrderItem>: stack0
-      //Assert: assertEquals((byte) (-12), method_result.byteValue());
+  public void test_calcCouponAmount_01()  throws Throwable  {
+      //caseID:41a7e0c086fafbbdff23842926555d1b
+      //CoveredLines: [33, 550, 551, 552, 553, 555, 556]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: vector0
+      //Assert: assertEquals((byte)4, method_result.byteValue());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
-      BigDecimal bigDecimal0 = BigDecimal.TEN;
-      Integer integer0 = new Integer(1074);
+      Vector<OmsOrderItem> vector0 = new Vector<OmsOrderItem>();
+      BigDecimal bigDecimal0 = BigDecimal.ONE;
+      Integer integer0 = new Integer(4);
       //mock omsOrderItem0
       OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0, bigDecimal0).when(omsOrderItem0).getIntegrationAmount();
+      doReturn(bigDecimal0, bigDecimal0).when(omsOrderItem0).getCouponAmount();
       doReturn(integer0).when(omsOrderItem0).getProductQuantity();
-      stack0.add(omsOrderItem0);
       
-      //Call method: calcIntegrationAmount
-      BigDecimal bigDecimal1 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcIntegrationAmount", (Object) stack0, (Class<?>) List.class);
+      vector0.add(omsOrderItem0);
+      
+      //Call method: calcCouponAmount
+      BigDecimal bigDecimal1 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcCouponAmount", (Object) vector0, (Class<?>) List.class);
       
       //Test Result Assert
-      assertEquals((byte) (-12), bigDecimal1.byteValue());
+      assertEquals((byte)4, bigDecimal1.byteValue());
   }
 
   @Test(timeout = 4000)
-  public void test_calcPromotionAmount_05()  throws Throwable  {
-      //caseID:63e219c045b3298e55fe34ae091668d7
-      //CoveredLines: [33, 560, 561, 562, 565, 566]
-      //Input_0_OmsOrderItem>: linkedList0
+  public void test_calcIntegrationAmount_02()  throws Throwable  {
+      //caseID:7e82894d25010c2c7dc1726dd4f9aeb0
+      //CoveredLines: [33, 537, 538, 539, 542, 543]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: stack0
       //Assert: assertEquals((short)0, method_result.shortValue());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      LinkedList<OmsOrderItem> linkedList0 = new LinkedList<OmsOrderItem>();
+      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
       //mock omsOrderItem0
       OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      linkedList0.add(omsOrderItem0);
       
-      //Call method: calcPromotionAmount
-      BigDecimal bigDecimal0 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcPromotionAmount", (Object) linkedList0, (Class<?>) List.class);
+      stack0.add(omsOrderItem0);
+      
+      //Call method: calcIntegrationAmount
+      BigDecimal bigDecimal0 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcIntegrationAmount", (Object) stack0, (Class<?>) List.class);
       
       //Test Result Assert
       assertEquals((short)0, bigDecimal0.shortValue());
   }
 
   @Test(timeout = 4000)
-  public void test_cancelOrder_06()  throws Throwable  {
-      //caseID:18f8f6f3ce86b730ee53f35b7ca70143
-      //CoveredLines: [33, 292, 293, 294, 295, 296]
-      //Input_0_Long: 1691L
+  public void test_calcPerCouponAmount_03()  throws Throwable  {
+      //caseID:e0935e7e47905b3699304751c6356ca7
+      //CoveredLines: [33, 634, 635, 637, 638, 639, 640, 699, 700, 701, 702, 703]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: arrayList0
+      //Input_1_com.macro.mall.model.SmsCoupon: {getAmount=BigDecimal.ONE}
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
+      Integer integer0 = new Integer(97);
+      BigDecimal bigDecimal0 = BigDecimal.ONE;
+      //mock omsOrderItem0
+      OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(bigDecimal0, bigDecimal0).when(omsOrderItem0).getProductPrice();
+      doReturn(integer0).when(omsOrderItem0).getProductQuantity();
+      
+      arrayList0.add(omsOrderItem0);
+      //mock smsCoupon0
+      SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(bigDecimal0).when(smsCoupon0).getAmount();
+      
+      //Call method: calcPerCouponAmount
+      PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcPerCouponAmount", (Object) arrayList0, (Class<?>) List.class, (Object) smsCoupon0, (Class<?>) SmsCoupon.class);
+      
+      //Test Result Assert
+      assertEquals(1, arrayList0.size());
+  }
+
+  @Test(timeout = 4000)
+  public void test_calcPromotionAmount_04()  throws Throwable  {
+      //caseID:062dd8037d22481f4454fe477b391583
+      //CoveredLines: [33, 563, 564, 565, 568, 569]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: vector0
+      //Assert: assertEquals((short)0, method_result.shortValue());
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Vector<OmsOrderItem> vector0 = new Vector<OmsOrderItem>();
+      //mock omsOrderItem0
+      OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
+      vector0.add(omsOrderItem0);
+      
+      //Call method: calcPromotionAmount
+      BigDecimal bigDecimal0 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "calcPromotionAmount", (Object) vector0, (Class<?>) List.class);
+      
+      //Test Result Assert
+      assertEquals((short)0, bigDecimal0.shortValue());
+  }
+
+  @Test(timeout = 4000)
+  public void test_cancelOrder_05()  throws Throwable  {
+      //caseID:a934f0ec542b5e4c22b38a4220cf18bb
+      //CoveredLines: [33, 295, 296, 297, 298, 299]
+      //Input_0_Long: 1620L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
-      Long long0 = new Long(1691L);
+      Long long0 = new Long(1620L);
+      
+      //Call method: cancelOrder
+      omsPortalOrderServiceImpl0.cancelOrder(long0);
+  }
+
+  @Test(timeout = 4000)
+  public void test_cancelOrder_06()  throws Throwable  {
+      //caseID:ed34ca4546e89f21a83782f46113345f
+      //CoveredLines: [33, 295, 296, 297, 298, 301, 302, 304, 305, 306, 307, 308, 310, 314, 316, 317, 318, 321, 479, 481, 482, 483, 484, 485, 491]
+      //Input_0_Long: 5
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
+      //mock omsOrderItemMapper0
+      OmsOrderItemMapper omsOrderItemMapper0 = mock(OmsOrderItemMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack0).when(omsOrderItemMapper0).selectByExample(any(com.macro.mall.model.OmsOrderItemExample.class));
+      LinkedList<OmsOrder> linkedList0 = new LinkedList<OmsOrder>();
+      Integer integer0 = new Integer(5);
+      Long long0 = new Long(5);
+      //mock omsOrder0
+      OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(omsOrder0).getCouponId();
+      doReturn(long0, long0, long0).when(omsOrder0).getMemberId();
+      doReturn(integer0, integer0).when(omsOrder0).getUseIntegration();
+      
+      linkedList0.add(omsOrder0);
+      //mock omsOrderMapper0
+      OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(linkedList0).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
+      doReturn(5).when(omsOrderMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.OmsOrder.class));
+      LinkedList<SmsCouponHistory> linkedList1 = new LinkedList<SmsCouponHistory>();
+      //mock smsCouponHistoryMapper0
+      SmsCouponHistoryMapper smsCouponHistoryMapper0 = mock(SmsCouponHistoryMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(linkedList1).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
+      //mock umsMember0
+      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(umsMember0).getIntegration();
+      //mock umsMemberService0
+      UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsMember0).when(umsMemberService0).getById(anyLong());
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "couponHistoryMapper", (Object) smsCouponHistoryMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemMapper", (Object) omsOrderItemMapper0);
       
       //Call method: cancelOrder
       omsPortalOrderServiceImpl0.cancelOrder(long0);
@@ -212,44 +244,51 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_cancelOrder_07()  throws Throwable  {
-      //caseID:61161bbdfb69e91bbe8846acb54c0e27
-      //CoveredLines: [33, 292, 293, 294, 295, 298, 299, 301, 302, 303, 304, 305, 307, 308, 311, 313, 318, 476, 478, 479, 480, 481, 482, 483, 484, 485, 486, 488]
+      //caseID:1eea80eb3a2f2db6940eb7aa00dcbb9a
+      //CoveredLines: [33, 295, 296, 297, 298, 301, 302, 304, 305, 306, 307, 308, 310, 311, 314, 316, 321, 479, 481, 482, 483, 484, 485, 486, 487, 488, 489, 491]
       //Input_0_Long: 0L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
+      ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
       //mock omsOrderItem0
       OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      stack0.add(omsOrderItem0);
+      
+      arrayList0.add(omsOrderItem0);
       //mock omsOrderItemMapper0
       OmsOrderItemMapper omsOrderItemMapper0 = mock(OmsOrderItemMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(stack0).when(omsOrderItemMapper0).selectByExample(any(com.macro.mall.model.OmsOrderItemExample.class));
-      LinkedList<OmsOrder> linkedList0 = new LinkedList<OmsOrder>();
+      doReturn(arrayList0).when(omsOrderItemMapper0).selectByExample(any(com.macro.mall.model.OmsOrderItemExample.class));
+      ArrayList<OmsOrder> arrayList1 = new ArrayList<OmsOrder>();
       Long long0 = new Long(0L);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(omsOrder0).getCouponId();
       doReturn(long0).when(omsOrder0).getMemberId();
       doReturn((Integer) null).when(omsOrder0).getUseIntegration();
-      linkedList0.add(omsOrder0);
+      
+      arrayList1.add(omsOrder0);
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList0).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
-      doReturn((-1)).when(omsOrderMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.OmsOrder.class));
-      LinkedList<SmsCouponHistory> linkedList1 = new LinkedList<SmsCouponHistory>();
+      doReturn(arrayList1).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
+      doReturn(2).when(omsOrderMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.OmsOrder.class));
+      LinkedList<SmsCouponHistory> linkedList0 = new LinkedList<SmsCouponHistory>();
       //mock smsCouponHistory0
       SmsCouponHistory smsCouponHistory0 = mock(SmsCouponHistory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      linkedList1.add(smsCouponHistory0);
+      
+      linkedList0.add(smsCouponHistory0);
       //mock smsCouponHistoryMapper0
       SmsCouponHistoryMapper smsCouponHistoryMapper0 = mock(SmsCouponHistoryMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList1).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
-      doReturn(6).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
+      doReturn(linkedList0).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
+      doReturn(100).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
       //mock portalOrderDao0
       PortalOrderDao portalOrderDao0 = mock(PortalOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(1378).when(portalOrderDao0).releaseSkuStockLock(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
+      doReturn(57).when(portalOrderDao0).releaseSkuStockLock(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "portalOrderDao", (Object) portalOrderDao0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "couponHistoryMapper", (Object) smsCouponHistoryMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemMapper", (Object) omsOrderItemMapper0);
       
       //Call method: cancelOrder
@@ -258,45 +297,60 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_cancelOrder_08()  throws Throwable  {
-      //caseID:b256e878f06e5941aee4929ac2c512b7
-      //CoveredLines: [33, 292, 293, 294, 295, 298, 299, 301, 302, 303, 304, 305, 307, 311, 313, 314, 315, 318, 476, 478, 479, 480, 481, 482, 483, 484, 485, 486, 488]
-      //Input_0_Long: (-1L)
+      //caseID:a6e5a1ced7b8ffa59e0d99c8516e0af4
+      //CoveredLines: [33, 295, 296, 297, 298, 301, 302, 304, 305, 306, 307, 308, 310, 311, 314, 316, 317, 318, 321, 479, 481, 482, 483, 484, 485, 486, 487, 488, 489, 491]
+      //Input_0_Long: 3041L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
+      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
+      //mock omsOrderItem0
+      OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
+      stack0.add(omsOrderItem0);
       //mock omsOrderItemMapper0
       OmsOrderItemMapper omsOrderItemMapper0 = mock(OmsOrderItemMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(omsOrderItemMapper0).selectByExample(any(com.macro.mall.model.OmsOrderItemExample.class));
-      Stack<OmsOrder> stack0 = new Stack<OmsOrder>();
-      Integer integer0 = new Integer(3);
-      Long long0 = new Long((-1L));
+      doReturn(stack0).when(omsOrderItemMapper0).selectByExample(any(com.macro.mall.model.OmsOrderItemExample.class));
+      LinkedList<OmsOrder> linkedList0 = new LinkedList<OmsOrder>();
+      Integer integer0 = new Integer(0);
+      Long long0 = new Long(3041L);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(omsOrder0).getCouponId();
       doReturn(long0, long0, long0).when(omsOrder0).getMemberId();
       doReturn(integer0, integer0).when(omsOrder0).getUseIntegration();
-      stack0.add(omsOrder0);
+      
+      linkedList0.add(omsOrder0);
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(stack0).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
-      doReturn(5599).when(omsOrderMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.OmsOrder.class));
-      Vector<SmsCouponHistory> vector0 = new Vector<SmsCouponHistory>();
+      doReturn(linkedList0).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
+      doReturn(7).when(omsOrderMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.OmsOrder.class));
+      LinkedList<SmsCouponHistory> linkedList1 = new LinkedList<SmsCouponHistory>();
       //mock smsCouponHistory0
       SmsCouponHistory smsCouponHistory0 = mock(SmsCouponHistory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      vector0.add(smsCouponHistory0);
+      
+      linkedList1.add(smsCouponHistory0);
       //mock smsCouponHistoryMapper0
       SmsCouponHistoryMapper smsCouponHistoryMapper0 = mock(SmsCouponHistoryMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(vector0).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
-      doReturn(1000).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
+      doReturn(linkedList1).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
+      doReturn(60).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
+      //mock portalOrderDao0
+      PortalOrderDao portalOrderDao0 = mock(PortalOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(2048).when(portalOrderDao0).releaseSkuStockLock(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0).when(umsMember0).getIntegration();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getById(anyLong());
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "portalOrderDao", (Object) portalOrderDao0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "couponHistoryMapper", (Object) smsCouponHistoryMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemMapper", (Object) omsOrderItemMapper0);
       
       //Call method: cancelOrder
@@ -305,8 +359,8 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_cancelTimeOutOrder_09()  throws Throwable  {
-      //caseID:b00e848766cc268f9d2cad3ae40b1c9f
-      //CoveredLines: [33, 262, 263, 265, 266, 267]
+      //caseID:6ae035c92d5dfb4b31671e4393987d0d
+      //CoveredLines: [33, 265, 266, 268, 269, 270]
       //Assert: assertEquals(0, (int)method_result);
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
@@ -317,7 +371,9 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       doReturn(omsOrderSetting0).when(omsOrderSettingMapper0).selectByPrimaryKey(anyLong());
       //mock portalOrderDao0
       PortalOrderDao portalOrderDao0 = mock(PortalOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "portalOrderDao", (Object) portalOrderDao0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderSettingMapper", (Object) omsOrderSettingMapper0);
       
       //Call method: cancelTimeOutOrder
@@ -329,26 +385,29 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_cancelTimeOutOrder_10()  throws Throwable  {
-      //caseID:7740a2bf5b37e3daccdcf7a86e2096a6
-      //CoveredLines: [33, 262, 263, 265, 266, 270, 271, 272, 273, 274, 275, 277, 279, 281, 285, 286, 476]
+      //caseID:677fc055842a3c534dc3bcb4f5234d25
+      //CoveredLines: [33, 265, 266, 268, 269, 273, 274, 275, 276, 277, 278, 280, 282, 284, 288, 289, 479]
       //Assert: assertEquals(1, (int)method_result);
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Integer integer0 = new Integer(1);
+      Integer integer0 = new Integer(2);
       //mock omsOrderSetting0
       OmsOrderSetting omsOrderSetting0 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0).when(omsOrderSetting0).getNormalOrderOvertime();
       //mock omsOrderSettingMapper0
       OmsOrderSettingMapper omsOrderSettingMapper0 = mock(OmsOrderSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(omsOrderSetting0).when(omsOrderSettingMapper0).selectByPrimaryKey(anyLong());
-      ArrayList<OmsOrderDetail> arrayList0 = new ArrayList<OmsOrderDetail>();
+      Vector<OmsOrderDetail> vector0 = new Vector<OmsOrderDetail>();
       //mock omsOrderDetail0
       OmsOrderDetail omsOrderDetail0 = mock(OmsOrderDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      arrayList0.add(omsOrderDetail0);
+      
+      vector0.add(omsOrderDetail0);
       //mock portalOrderDao0
       PortalOrderDao portalOrderDao0 = mock(PortalOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(portalOrderDao0).getTimeOutOrders(nullable(java.lang.Integer.class));
+      doReturn(vector0).when(portalOrderDao0).getTimeOutOrders(nullable(java.lang.Integer.class));
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "portalOrderDao", (Object) portalOrderDao0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderSettingMapper", (Object) omsOrderSettingMapper0);
       
       //Call method: cancelTimeOutOrder
@@ -360,51 +419,57 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_cancelTimeOutOrder_11()  throws Throwable  {
-      //caseID:3f1181dd9039d13cbe489c179ce95c6e
-      //CoveredLines: [33, 262, 263, 265, 266, 270, 271, 272, 273, 274, 275, 277, 279, 281, 282, 283, 285, 286, 476, 478, 479, 480, 481, 482, 483, 484, 485, 486, 488]
+      //caseID:29ac92278f91857f50b5f31da4c4bf4f
+      //CoveredLines: [33, 265, 266, 268, 269, 273, 274, 275, 276, 277, 278, 280, 282, 284, 285, 286, 288, 289, 479, 481, 482, 483, 484, 485, 486, 487, 488, 489, 491]
       //Assert: assertEquals(1, (int)method_result);
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Integer integer0 = new Integer(420);
+      Integer integer0 = new Integer(2);
       //mock omsOrderSetting0
       OmsOrderSetting omsOrderSetting0 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0).when(omsOrderSetting0).getNormalOrderOvertime();
       //mock omsOrderSettingMapper0
       OmsOrderSettingMapper omsOrderSettingMapper0 = mock(OmsOrderSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(omsOrderSetting0).when(omsOrderSettingMapper0).selectByPrimaryKey(anyLong());
-      LinkedList<SmsCouponHistory> linkedList0 = new LinkedList<SmsCouponHistory>();
+      Vector<SmsCouponHistory> vector0 = new Vector<SmsCouponHistory>();
       //mock smsCouponHistory0
       SmsCouponHistory smsCouponHistory0 = mock(SmsCouponHistory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      linkedList0.add(smsCouponHistory0);
+      
+      vector0.add(smsCouponHistory0);
       //mock smsCouponHistoryMapper0
       SmsCouponHistoryMapper smsCouponHistoryMapper0 = mock(SmsCouponHistoryMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList0).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
-      doReturn(4).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
-      ArrayList<OmsOrderDetail> arrayList0 = new ArrayList<OmsOrderDetail>();
-      ArrayList<OmsOrderItem> arrayList1 = new ArrayList<OmsOrderItem>();
-      Long long0 = new Long(0L);
+      doReturn(vector0).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
+      doReturn(3711).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
+      Vector<OmsOrderDetail> vector1 = new Vector<OmsOrderDetail>();
+      Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
+      Long long0 = new Long(2104L);
       //mock omsOrderDetail0
       OmsOrderDetail omsOrderDetail0 = mock(OmsOrderDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(omsOrderDetail0).getCouponId();
       doReturn(long0).when(omsOrderDetail0).getId();
       doReturn(long0, long0, long0).when(omsOrderDetail0).getMemberId();
       doReturn(integer0, integer0).when(omsOrderDetail0).getUseIntegration();
-      doReturn(arrayList1).when(omsOrderDetail0).getOrderItemList();
-      arrayList0.add(omsOrderDetail0);
+      doReturn(stack0).when(omsOrderDetail0).getOrderItemList();
+      
+      vector1.add(omsOrderDetail0);
       //mock portalOrderDao0
       PortalOrderDao portalOrderDao0 = mock(PortalOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(portalOrderDao0).getTimeOutOrders(anyInt());
-      doReturn(2147483645).when(portalOrderDao0).releaseSkuStockLock(nullable(java.util.List.class));
-      doReturn(224).when(portalOrderDao0).updateOrderStatus(ArgumentMatchers.<java.lang.Long>anyList() , anyInt());
+      doReturn(vector1).when(portalOrderDao0).getTimeOutOrders(anyInt());
+      doReturn(1000).when(portalOrderDao0).releaseSkuStockLock(nullable(java.util.List.class));
+      doReturn(60).when(portalOrderDao0).updateOrderStatus(ArgumentMatchers.<java.lang.Long>anyList() , anyInt());
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0).when(umsMember0).getIntegration();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getById(anyLong());
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "portalOrderDao", (Object) portalOrderDao0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "couponHistoryMapper", (Object) smsCouponHistoryMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderSettingMapper", (Object) omsOrderSettingMapper0);
       
       //Call method: cancelTimeOutOrder
@@ -416,9 +481,9 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_confirmReceiveOrder_12()  throws Throwable  {
-      //caseID:6a32c314024081de337db6d4d2f023e3
-      //CoveredLines: [33, 331, 332, 333, 334]
-      //Input_0_Long: 0L
+      //caseID:7ad6cfc161f8b086fc43e6994747099b
+      //CoveredLines: [33, 334, 335, 336, 337]
+      //Input_0_Long: 1134L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       Long long0 = new Long(0L);
@@ -428,20 +493,22 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(omsOrder0).when(omsOrderMapper0).selectByPrimaryKey(anyLong());
-      Long long1 = new Long(37L);
+      Long long1 = new Long(1134L);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long1).when(umsMember0).getId();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
       
       //Call method: confirmReceiveOrder
       // Undeclared exception!
       try { 
-        omsPortalOrderServiceImpl0.confirmReceiveOrder(long0);
+        omsPortalOrderServiceImpl0.confirmReceiveOrder(long1);
       } catch(Throwable e) {
          verifyException("com.macro.mall.common.exception.Asserts", e);
          assertEquals("com.macro.mall.common.exception.ApiException", e.getClass().getName());
@@ -451,13 +518,13 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_confirmReceiveOrder_13()  throws Throwable  {
-      //caseID:6e1beff8b29497f2bcbdc712dcf692e6
-      //CoveredLines: [33, 331, 332, 333, 336, 337]
-      //Input_0_Long: 0L
+      //caseID:a54eeff60a1e5b01937a205140817c5e
+      //CoveredLines: [33, 334, 335, 336, 339, 340]
+      //Input_0_Long: 199L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(0L);
-      Integer integer0 = new Integer(4);
+      Long long0 = new Long(199L);
+      Integer integer0 = new Integer(1000);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(omsOrder0).getMemberId();
@@ -471,7 +538,9 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
       
       //Call method: confirmReceiveOrder
@@ -487,12 +556,12 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_confirmReceiveOrder_14()  throws Throwable  {
-      //caseID:468c97cd1ae3cb0447161074aca0a397
-      //CoveredLines: [33, 331, 332, 333, 336, 339, 340, 341, 342, 343]
-      //Input_0_Long: 882L
+      //caseID:feea708b56808badedeacdd2d00dec42
+      //CoveredLines: [33, 334, 335, 336, 339, 342, 343, 344, 345, 346]
+      //Input_0_Long: (-9223372036854775797L)
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(882L);
+      Long long0 = new Long((-9223372036854775797L));
       Integer integer0 = new Integer(2);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
@@ -501,14 +570,15 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(omsOrder0).when(omsOrderMapper0).selectByPrimaryKey(anyLong());
-      doReturn(2).when(omsOrderMapper0).updateByPrimaryKey(any(com.macro.mall.model.OmsOrder.class));
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(umsMember0).getId();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
       
       //Call method: confirmReceiveOrder
@@ -516,58 +586,35 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_deleteCartItemList_15()  throws Throwable  {
-      //caseID:83ce971fa4dfa009eb3e8ee7c7acf4c9
-      //CoveredLines: [33, 439, 440, 441, 442, 443, 444]
-      //Input_0_CartPromotionItem>: arrayList0
-      //Input_1_UmsMember: {}
+  public void test_deleteOrder_15()  throws Throwable  {
+      //caseID:953a4ccc0188f35162ba2fa1f51b6786
+      //CoveredLines: [33, 405, 406, 407, 408]
+      //Input_0_Long: (-1L)
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      //mock omsCartItemService0
-      OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
-      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
-      //mock cartPromotionItem0
-      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      arrayList0.add(cartPromotionItem0);
-      //mock umsMember0
-      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: deleteCartItemList
-      PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "deleteCartItemList", (Object) arrayList0, (Class<?>) List.class, (Object) umsMember0, (Class<?>) UmsMember.class);
-      
-      //Test Result Assert
-      assertEquals(1, arrayList0.size());
-  }
-
-  @Test(timeout = 4000)
-  public void test_deleteOrder_16()  throws Throwable  {
-      //caseID:99ded4eb2a13432f99981ba9e66b9223
-      //CoveredLines: [33, 402, 403, 404, 405]
-      //Input_0_Long: 1L
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(0L);
+      Long long0 = new Long((-1L));
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(omsOrder0).getMemberId();
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(omsOrder0).when(omsOrderMapper0).selectByPrimaryKey(anyLong());
-      Long long1 = new Long(1L);
+      Long long1 = new Long(0L);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long1).when(umsMember0).getId();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
       
       //Call method: deleteOrder
       // Undeclared exception!
       try { 
-        omsPortalOrderServiceImpl0.deleteOrder(long1);
+        omsPortalOrderServiceImpl0.deleteOrder(long0);
       } catch(Throwable e) {
          verifyException("com.macro.mall.common.exception.Asserts", e);
          assertEquals("com.macro.mall.common.exception.ApiException", e.getClass().getName());
@@ -576,14 +623,14 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_deleteOrder_17()  throws Throwable  {
-      //caseID:a5bfa72439acbe42e18dfa6633aa000b
-      //CoveredLines: [33, 402, 403, 404, 407, 411]
-      //Input_0_Long: 2811L
+  public void test_deleteOrder_16()  throws Throwable  {
+      //caseID:b8f6e057cbb5bb50ec0a90799eaa215e
+      //CoveredLines: [33, 405, 406, 407, 410, 414]
+      //Input_0_Long: 10L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(2811L);
-      Integer integer0 = new Integer((-2146617725));
+      Long long0 = new Long(10L);
+      Integer integer0 = new Integer(1000);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(omsOrder0).getMemberId();
@@ -597,7 +644,9 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
       
       //Call method: deleteOrder
@@ -612,13 +661,13 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_deleteOrder_18()  throws Throwable  {
-      //caseID:bb4608cf868984678bce9673e5af2d03
-      //CoveredLines: [33, 402, 403, 404, 407, 408, 409, 413]
-      //Input_0_Long: 2877L
+  public void test_deleteOrder_17()  throws Throwable  {
+      //caseID:ff551af854391d7de1f1ce19ba104c7c
+      //CoveredLines: [33, 405, 406, 407, 410, 411, 412, 416]
+      //Input_0_Long: 1L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(2877L);
+      Long long0 = new Long(1L);
       Integer integer0 = new Integer(4);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
@@ -633,7 +682,9 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
       
       //Call method: deleteOrder
@@ -641,13 +692,13 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_deleteOrder_19()  throws Throwable  {
-      //caseID:9c3f2e71a19a526afa5fab66273ba402
-      //CoveredLines: [33, 402, 403, 404, 407, 408, 409, 413]
-      //Input_0_Long: 1L
+  public void test_deleteOrder_18()  throws Throwable  {
+      //caseID:515ba44e5c18728524d8b4efdf93fb9f
+      //CoveredLines: [33, 405, 406, 407, 410, 411, 412, 416]
+      //Input_0_Long: 198L
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(1L);
+      Long long0 = new Long(198L);
       Integer integer0 = new Integer(3);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
@@ -656,14 +707,16 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(omsOrder0).when(omsOrderMapper0).selectByPrimaryKey(anyLong());
-      doReturn(745).when(omsOrderMapper0).updateByPrimaryKey(any(com.macro.mall.model.OmsOrder.class));
+      doReturn((-10)).when(omsOrderMapper0).updateByPrimaryKey(any(com.macro.mall.model.OmsOrder.class));
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(umsMember0).getId();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
       
       //Call method: deleteOrder
@@ -671,18 +724,20 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_detail_20()  throws Throwable  {
-      //caseID:fec8b06c73ff6b9f60f9b73488d95790
-      //CoveredLines: [33, 390, 391, 392, 393, 394, 395, 396, 397]
+  public void test_detail_19()  throws Throwable  {
+      //caseID:3192359fc4d1e46b2c9a85578e61ac32
+      //CoveredLines: [33, 393, 394, 395, 396, 397, 398, 399, 400]
       //Input_0_Long: 0L
-      //Assert: assertNull(method_result.getSourceType());
+      //Assert: assertNull(method_result.getBillContent());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       //mock omsOrderItemMapper0
       OmsOrderItemMapper omsOrderItemMapper0 = mock(OmsOrderItemMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemMapper", (Object) omsOrderItemMapper0);
       Long long0 = new Long(0L);
       
@@ -690,15 +745,15 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       OmsOrderDetail omsOrderDetail0 = omsPortalOrderServiceImpl0.detail(long0);
       
       //Test Result Assert
-      assertNull(omsOrderDetail0.getSourceType());
+      assertNull(omsOrderDetail0.getBillContent());
   }
 
   @Test(timeout = 4000)
-  public void test_generateConfirmOrder_21()  throws Throwable  {
-      //caseID:6b15221693ae14f98fc117cf325b82a1
-      //CoveredLines: [33, 71, 73, 74, 75, 77, 78, 80, 81, 83, 85, 86, 88, 89, 90, 730, 731, 732, 733, 734, 738, 739, 740, 741]
-      //Input_0_Long>: vector0
-      //Assert: assertEquals(524, (int)method_result.getMemberIntegration());
+  public void test_generateConfirmOrder_20()  throws Throwable  {
+      //caseID:1c140b1ee963db303849c7241bd54d83
+      //CoveredLines: [33, 71, 73, 74, 75, 77, 78, 80, 81, 83, 85, 86, 88, 89, 90, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744]
+      //Input_0_List<Long>: vector1
+      //Assert: assertEquals(39, (int)method_result.getMemberIntegration());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       //mock umsIntegrationConsumeSetting0
@@ -706,20 +761,28 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsIntegrationConsumeSettingMapper0
       UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
-      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
+      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
+      Integer integer0 = new Integer(39);
+      BigDecimal bigDecimal0 = new BigDecimal((-1L));
+      //mock cartPromotionItem0
+      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(bigDecimal0).when(cartPromotionItem0).getPrice();
+      doReturn(integer0, integer0).when(cartPromotionItem0).getQuantity();
+      doReturn(bigDecimal0).when(cartPromotionItem0).getReduceAmount();
+      
+      linkedList0.add(cartPromotionItem0);
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
-      ArrayList<SmsCouponHistoryDetail> arrayList1 = new ArrayList<SmsCouponHistoryDetail>();
+      doReturn(linkedList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      Stack<SmsCouponHistoryDetail> stack0 = new Stack<SmsCouponHistoryDetail>();
       //mock umsMemberCouponService0
       UmsMemberCouponService umsMemberCouponService0 = mock(UmsMemberCouponService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList1).when(umsMemberCouponService0).listCart(nullable(java.util.List.class) , nullable(java.lang.Integer.class));
-      ArrayList<UmsMemberReceiveAddress> arrayList2 = new ArrayList<UmsMemberReceiveAddress>();
+      doReturn(stack0).when(umsMemberCouponService0).listCart(nullable(java.util.List.class) , nullable(java.lang.Integer.class));
+      Vector<UmsMemberReceiveAddress> vector0 = new Vector<UmsMemberReceiveAddress>();
       //mock umsMemberReceiveAddressService0
       UmsMemberReceiveAddressService umsMemberReceiveAddressService0 = mock(UmsMemberReceiveAddressService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList2).when(umsMemberReceiveAddressService0).list();
-      Integer integer0 = new Integer(524);
-      Long long0 = new Long(524);
+      doReturn(vector0).when(umsMemberReceiveAddressService0).list();
+      Long long0 = new Long(3473L);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(umsMember0).getId();
@@ -727,140 +790,91 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberReceiveAddressService", (Object) umsMemberReceiveAddressService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberCouponService", (Object) umsMemberCouponService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
-      Vector<Long> vector0 = new Vector<Long>();
+      Vector<Long> vector1 = new Vector<Long>();
       
       //Call method: generateConfirmOrder
-      ConfirmOrderResult confirmOrderResult0 = omsPortalOrderServiceImpl0.generateConfirmOrder(vector0);
+      ConfirmOrderResult confirmOrderResult0 = omsPortalOrderServiceImpl0.generateConfirmOrder(vector1);
       
       //Test Result Assert
-      assertEquals(524, (int)confirmOrderResult0.getMemberIntegration());
+      assertEquals(39, (int)confirmOrderResult0.getMemberIntegration());
   }
 
   @Test(timeout = 4000)
-  public void test_generateOrder_22()  throws Throwable  {
-      //caseID:8f4d4fc62344f71a3b8867cd4d2744b5
-      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 131, 132, 136, 139, 610, 611, 614, 623, 683, 684, 685, 686, 718, 723]
-      //Input_0_OrderParam: {getCouponId=(-1L) (-1L), getCartIds=arrayList0, getUseIntegration=281 (Integer) null}
+  public void test_generateOrder_21()  throws Throwable  {
+      //caseID:5ed33b02189b7f92dbd82f0dff30b897
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 131, 132, 136, 139, 141, 159, 161, 163, 164, 165, 166, 167, 168, 169, 172, 173, 175, 176, 177, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 216, 220, 221, 225, 227, 228, 231, 232, 233, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 435, 453, 454, 457, 464, 465, 468, 479, 481, 482, 483, 484, 485, 486, 487, 488, 489, 491, 494, 502, 508, 509, 513, 514, 517, 525, 526, 527, 528, 529, 530, 550, 551, 556, 563, 564, 569, 613, 614, 617, 626, 686, 687, 688, 689, 699, 700, 703, 710, 715, 721, 726]
+      //Input_0_OrderParam: {getCouponId=181L 181L 181L 181L 181L 181L, getPayType=0, getCartIds=vector0, getMemberReceiveAddressId=181L, getUseIntegration=(Integer) null (Integer) null 501 501 (Integer) null}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
-      //mock omsCartItemService0
-      OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
-      LinkedList<SmsCouponHistoryDetail> linkedList1 = new LinkedList<SmsCouponHistoryDetail>();
-      Long long0 = new Long((-1L));
-      Integer integer0 = new Integer(281);
-      //mock smsCoupon0
-      SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(long0).when(smsCoupon0).getId();
-      //mock smsCoupon1
-      SmsCoupon smsCoupon1 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0, integer0, integer0).when(smsCoupon1).getUseType();
-      //mock smsCouponHistoryDetail0
-      SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("org.springframework.data.mapping.PropertyReferenceException").when(smsCouponHistoryDetail0).toString();
-      doReturn(smsCoupon0, smsCoupon1).when(smsCouponHistoryDetail0).getCoupon();
-      linkedList1.add(smsCouponHistoryDetail0);
-      //mock umsMemberCouponService0
-      UmsMemberCouponService umsMemberCouponService0 = mock(UmsMemberCouponService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList1).when(umsMemberCouponService0).listCart(ArgumentMatchers.<com.macro.mall.portal.domain.CartPromotionItem>anyList() , anyInt());
-      //mock umsMember0
-      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(long0).when(umsMember0).getId();
-      //mock umsMemberService0
-      UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberCouponService", (Object) umsMemberCouponService0);
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
-      ArrayList<Long> arrayList0 = new ArrayList<Long>();
-      //mock orderParam0
-      OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(orderParam0).getCartIds();
-      doReturn(long0, long0).when(orderParam0).getCouponId();
-      doReturn(integer0, (Integer) null).when(orderParam0).getUseIntegration();
-      
-      //Call method: generateOrder
-      // Undeclared exception!
-      try { 
-        omsPortalOrderServiceImpl0.generateOrder(orderParam0);
-      } catch(Throwable e) {
-         verifyException("com.macro.mall.portal.service.impl.OmsPortalOrderServiceImpl", e);
-         assertEquals("java.lang.NullPointerException", e.getClass().getName());
-      }
-  }
-
-  @Test(timeout = 4000)
-  public void test_generateOrder_23()  throws Throwable  {
-      //caseID:749347a2ccd18560ec185bef006c2439
-      //CoveredLines: [33, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 124, 126, 127, 128, 139, 141, 142, 143, 159, 161, 163, 164, 165, 166, 167, 168, 169, 170, 175, 176, 177, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 216, 220, 221, 222, 223, 224, 225, 227, 228, 231, 232, 233, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 432, 450, 451, 452, 453, 454, 461, 462, 463, 464, 465, 476, 491, 493, 494, 495, 496, 497, 498, 499, 505, 506, 507, 508, 509, 510, 511, 512, 514, 522, 523, 524, 525, 526, 527, 560, 561, 562, 563, 565, 566, 696, 697, 698, 699, 700, 707, 708, 709, 710, 711, 712, 718, 719, 722, 723]
-      //Input_0_OrderParam: {getCouponId=(Long) null (Long) null (-1L) (Long) null, getPayType=100, getCartIds=vector2, getMemberReceiveAddressId=(-1L), getUseIntegration=(Integer) null (Integer) null 100 100 (Integer) null}
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long((-1L));
+      Long long0 = new Long(181L);
       //mock redisService0
       RedisService redisService0 = mock(RedisService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(redisService0).incr(anyString() , anyLong());
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(2).when(omsOrderMapper0).insert(any(com.macro.mall.model.OmsOrder.class));
-      Vector<OmsOrderSetting> vector0 = new Vector<OmsOrderSetting>();
-      Integer integer0 = new Integer(100);
+      doReturn(146).when(omsOrderMapper0).insert(any(com.macro.mall.model.OmsOrder.class));
+      LinkedList<OmsOrderSetting> linkedList0 = new LinkedList<OmsOrderSetting>();
+      Integer integer0 = new Integer(0);
       //mock omsOrderSetting0
       OmsOrderSetting omsOrderSetting0 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0).when(omsOrderSetting0).getConfirmOvertime();
-      vector0.add(omsOrderSetting0);
+      
+      linkedList0.add(omsOrderSetting0);
       //mock omsOrderSettingMapper0
       OmsOrderSettingMapper omsOrderSettingMapper0 = mock(OmsOrderSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(vector0).when(omsOrderSettingMapper0).selectByExample(any(com.macro.mall.model.OmsOrderSettingExample.class));
-      //mock pmsSkuStock0
-      PmsSkuStock pmsSkuStock0 = mock(PmsSkuStock.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(pmsSkuStock0).getLockStock();
-      //mock pmsSkuStockMapper0
-      PmsSkuStockMapper pmsSkuStockMapper0 = mock(PmsSkuStockMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(pmsSkuStock0).when(pmsSkuStockMapper0).selectByPrimaryKey(anyLong());
-      doReturn(100).when(pmsSkuStockMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.PmsSkuStock.class));
+      doReturn(linkedList0).when(omsOrderSettingMapper0).selectByExample(any(com.macro.mall.model.OmsOrderSettingExample.class));
+      Stack<SmsCouponHistory> stack0 = new Stack<SmsCouponHistory>();
+      //mock smsCouponHistory0
+      SmsCouponHistory smsCouponHistory0 = mock(SmsCouponHistory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
+      stack0.add(smsCouponHistory0);
+      //mock smsCouponHistoryMapper0
+      SmsCouponHistoryMapper smsCouponHistoryMapper0 = mock(SmsCouponHistoryMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack0).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
+      doReturn(3837).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
       //mock portalOrderItemDao0
       PortalOrderItemDao portalOrderItemDao0 = mock(PortalOrderItemDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(60).when(portalOrderItemDao0).insertList(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
-      Vector<CartPromotionItem> vector1 = new Vector<CartPromotionItem>();
-      BigDecimal bigDecimal0 = new BigDecimal(10L);
-      //mock cartPromotionItem0
-      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(cartPromotionItem0).getPrice();
-      doReturn("yyyyMMdd;;").when(cartPromotionItem0).getProductAttr();
-      doReturn("h'JF").when(cartPromotionItem0).getProductBrand();
-      doReturn(long0).when(cartPromotionItem0).getProductCategoryId();
-      doReturn(long0).when(cartPromotionItem0).getProductId();
-      doReturn("PERMANENT_REDIRECT").when(cartPromotionItem0).getProductName();
-      doReturn(", defaultStatus=;;").when(cartPromotionItem0).getProductPic();
-      doReturn(", productSubTitle=").when(cartPromotionItem0).getProductSkuCode();
-      doReturn(long0, long0).when(cartPromotionItem0).getProductSkuId();
-      doReturn("\u53EA\u80FD\u5220\u9664\u5DF2\u5B8C\u6210\u6216\u5DF2\u5173\u95ED\u7684\u8BA2\u5355\uFF01").when(cartPromotionItem0).getProductSn();
-      doReturn(integer0, integer0).when(cartPromotionItem0).getQuantity();
-      doReturn(integer0).when(cartPromotionItem0).getGrowth();
-      doReturn(integer0).when(cartPromotionItem0).getIntegration();
-      doReturn("\u8BE5\u8BA2\u5355\u8FD8\u672A\u53D1\u8D27\uFF01").when(cartPromotionItem0).getPromotionMessage();
-      doReturn(integer0, integer0).when(cartPromotionItem0).getRealStock();
-      doReturn(bigDecimal0).when(cartPromotionItem0).getReduceAmount();
-      vector1.add(cartPromotionItem0);
+      doReturn((-396)).when(portalOrderItemDao0).insertList(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(vector1).when(omsCartItemService0).listPromotion(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      Stack<SmsCouponHistoryDetail> stack1 = new Stack<SmsCouponHistoryDetail>();
+      //mock smsCoupon0
+      SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(smsCoupon0).getId();
+      Integer integer1 = new Integer(501);
+      //mock smsCoupon1
+      SmsCoupon smsCoupon1 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer1, integer0, integer0).when(smsCoupon1).getUseType();
+      //mock smsCouponHistoryDetail0
+      SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn("PLbI").when(smsCouponHistoryDetail0).toString();
+      doReturn(smsCoupon0, smsCoupon1).when(smsCouponHistoryDetail0).getCoupon();
+      
+      stack1.add(smsCouponHistoryDetail0);
+      //mock umsMemberCouponService0
+      UmsMemberCouponService umsMemberCouponService0 = mock(UmsMemberCouponService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack1).when(umsMemberCouponService0).listCart(ArgumentMatchers.<com.macro.mall.portal.domain.CartPromotionItem>anyList() , anyInt());
       //mock umsMemberReceiveAddress0
       UmsMemberReceiveAddress umsMemberReceiveAddress0 = mock(UmsMemberReceiveAddress.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(">Je)h+9NW|ENC&\"O").when(umsMemberReceiveAddress0).getCity();
-      doReturn("%02d").when(umsMemberReceiveAddress0).getDetailAddress();
-      doReturn("2").when(umsMemberReceiveAddress0).getName();
-      doReturn("orderItemList").when(umsMemberReceiveAddress0).getPhoneNumber();
-      doReturn("\u5E93\u5B58\u4E0D\u8DB3\uFF0C\u65E0\u6CD5\u4E0B\u5355").when(umsMemberReceiveAddress0).getPostCode();
-      doReturn("-j6NH*$lXD<").when(umsMemberReceiveAddress0).getProvince();
-      doReturn("<$;U.er{in").when(umsMemberReceiveAddress0).getRegion();
+      doReturn("").when(umsMemberReceiveAddress0).getCity();
+      doReturn("Executor [").when(umsMemberReceiveAddress0).getDetailAddress();
+      doReturn("zZ;e%?hjeTYI/7FGYv.").when(umsMemberReceiveAddress0).getName();
+      doReturn(";").when(umsMemberReceiveAddress0).getPhoneNumber();
+      doReturn("delivery_time =").when(umsMemberReceiveAddress0).getPostCode();
+      doReturn("60").when(umsMemberReceiveAddress0).getProvince();
+      doReturn("8G;ej").when(umsMemberReceiveAddress0).getRegion();
       //mock umsMemberReceiveAddressService0
       UmsMemberReceiveAddressService umsMemberReceiveAddressService0 = mock(UmsMemberReceiveAddressService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMemberReceiveAddress0).when(umsMemberReceiveAddressService0).getItem(nullable(java.lang.Long.class));
@@ -868,26 +882,36 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0, long0, long0, long0).when(umsMember0).getId();
       doReturn(integer0).when(umsMember0).getIntegration();
-      doReturn("-1").when(umsMember0).getUsername();
+      doReturn("aLGGgu9$h").when(umsMember0).getUsername();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberReceiveAddressService", (Object) umsMemberReceiveAddressService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberCouponService", (Object) umsMemberCouponService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemDao", (Object) portalOrderItemDao0);
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "skuStockMapper", (Object) pmsSkuStockMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "couponHistoryMapper", (Object) smsCouponHistoryMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderSettingMapper", (Object) omsOrderSettingMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "redisService", (Object) redisService0);
-      Vector<Long> vector2 = new Vector<Long>();
+      Vector<Long> vector0 = new Vector<Long>();
       //mock orderParam0
       OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(vector2).when(orderParam0).getCartIds();
-      doReturn((Long) null, (Long) null, long0, (Long) null).when(orderParam0).getCouponId();
+      doReturn(vector0).when(orderParam0).getCartIds();
+      doReturn(long0, long0, long0, long0, long0, long0).when(orderParam0).getCouponId();
       doReturn(long0).when(orderParam0).getMemberReceiveAddressId();
       doReturn(integer0).when(orderParam0).getPayType();
-      doReturn((Integer) null, (Integer) null, integer0, integer0, (Integer) null).when(orderParam0).getUseIntegration();
+      doReturn((Integer) null, (Integer) null, integer1, integer1, (Integer) null).when(orderParam0).getUseIntegration();
       
       //Call method: generateOrder
       // Undeclared exception!
@@ -900,19 +924,70 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_generateOrder_24()  throws Throwable  {
-      //caseID:a3ef8ebc1af8f38fceffc958a52eef8b
-      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 146, 147, 148, 149, 578, 580, 581, 696, 697, 700, 718, 723]
-      //Input_0_OrderParam: {getCouponId=(Long) null 67, getCartIds=linkedList1, getUseIntegration=0 67 67}
+  public void test_generateOrder_22()  throws Throwable  {
+      //caseID:fefb415b25fd0f5ce029ac948b53a377
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 131, 132, 133, 686, 687, 692, 721, 726]
+      //Input_0_OrderParam: {getCouponId=250L 250L, getCartIds=stack0}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Integer integer0 = new Integer(0);
-      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
-      Integer integer1 = new Integer(67);
-      Long long0 = new Long(67);
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      Vector<SmsCouponHistoryDetail> vector0 = new Vector<SmsCouponHistoryDetail>();
+      //mock umsMemberCouponService0
+      UmsMemberCouponService umsMemberCouponService0 = mock(UmsMemberCouponService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(vector0).when(umsMemberCouponService0).listCart(ArgumentMatchers.<com.macro.mall.portal.domain.CartPromotionItem>anyList() , anyInt());
+      Long long0 = new Long(250L);
+      //mock umsMember0
+      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(umsMember0).getId();
+      //mock umsMemberService0
+      UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberCouponService", (Object) umsMemberCouponService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      Stack<Long> stack0 = new Stack<Long>();
+      //mock orderParam0
+      OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack0).when(orderParam0).getCartIds();
+      doReturn(long0, long0).when(orderParam0).getCouponId();
+      
+      //Call method: generateOrder
+      // Undeclared exception!
+      try { 
+        omsPortalOrderServiceImpl0.generateOrder(orderParam0);
+      } catch(Throwable e) {
+         verifyException("com.macro.mall.common.exception.Asserts", e);
+         assertEquals("com.macro.mall.common.exception.ApiException", e.getClass().getName());
+         assertEquals("\u8BE5\u4F18\u60E0\u5238\u4E0D\u53EF\u7528", e.getMessage());
+      }
+  }
+
+  @Test(timeout = 4000)
+  public void test_generateOrder_23()  throws Throwable  {
+      //caseID:bb606a07a1f3c35168b69bb6e6231f47
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 146, 147, 148, 149, 581, 583, 588, 589, 594, 595, 699, 700, 703, 721, 726]
+      //Input_0_OrderParam: {getCouponId=(Long) null 2843L, getCartIds=vector0, getUseIntegration=226 226 4}
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Integer integer0 = new Integer(226);
+      //mock umsIntegrationConsumeSetting0
+      UmsIntegrationConsumeSetting umsIntegrationConsumeSetting0 = mock(UmsIntegrationConsumeSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(umsIntegrationConsumeSetting0).getCouponStatus();
+      doReturn(integer0).when(umsIntegrationConsumeSetting0).getUseUnit();
+      //mock umsIntegrationConsumeSettingMapper0
+      UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
+      //mock omsCartItemService0
+      OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      Long long0 = new Long(2843L);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(umsMember0).getId();
@@ -920,13 +995,69 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
-      LinkedList<Long> linkedList1 = new LinkedList<Long>();
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
+      Vector<Long> vector0 = new Vector<Long>();
+      Integer integer1 = new Integer(4);
       //mock orderParam0
       OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList1).when(orderParam0).getCartIds();
+      doReturn(vector0).when(orderParam0).getCartIds();
       doReturn((Long) null, long0).when(orderParam0).getCouponId();
+      doReturn(integer0, integer0, integer1).when(orderParam0).getUseIntegration();
+      
+      //Call method: generateOrder
+      // Undeclared exception!
+      try { 
+        omsPortalOrderServiceImpl0.generateOrder(orderParam0);
+      } catch(Throwable e) {
+         verifyException("com.macro.mall.common.exception.Asserts", e);
+         assertEquals("com.macro.mall.common.exception.ApiException", e.getClass().getName());
+         assertEquals("\u79EF\u5206\u4E0D\u53EF\u7528", e.getMessage());
+      }
+  }
+
+  @Test(timeout = 4000)
+  public void test_generateOrder_24()  throws Throwable  {
+      //caseID:e3a275647268b1c8c02673382a5fe93b
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 146, 147, 148, 149, 581, 583, 588, 589, 594, 595, 699, 700, 703, 721, 726]
+      //Input_0_OrderParam: {getCouponId=(Long) null (Long) null, getCartIds=stack0, getUseIntegration=100 37 37}
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Integer integer0 = new Integer(100);
+      //mock umsIntegrationConsumeSetting0
+      UmsIntegrationConsumeSetting umsIntegrationConsumeSetting0 = mock(UmsIntegrationConsumeSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(umsIntegrationConsumeSetting0).getUseUnit();
+      //mock umsIntegrationConsumeSettingMapper0
+      UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
+      //mock omsCartItemService0
+      OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      Long long0 = new Long(250L);
+      Integer integer1 = new Integer(37);
+      //mock umsMember0
+      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(umsMember0).getId();
+      doReturn(integer1).when(umsMember0).getIntegration();
+      //mock umsMemberService0
+      UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
+      Stack<Long> stack0 = new Stack<Long>();
+      //mock orderParam0
+      OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack0).when(orderParam0).getCartIds();
+      doReturn((Long) null, (Long) null).when(orderParam0).getCouponId();
       doReturn(integer0, integer1, integer1).when(orderParam0).getUseIntegration();
       
       //Call method: generateOrder
@@ -942,42 +1073,43 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_generateOrder_25()  throws Throwable  {
-      //caseID:28df45e35d09c3b0fc93231689f4ff68
-      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 146, 147, 148, 149, 578, 580, 585, 586, 591, 592, 696, 697, 700, 718, 723]
-      //Input_0_OrderParam: {getCouponId=(Long) null 0L, getCartIds=linkedList1, getUseIntegration=1049 (-3974) (-3974)}
+      //caseID:fcc0fe187a1dd7b771899f3116c89ad3
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 146, 147, 148, 149, 581, 583, 588, 589, 594, 598, 599, 600, 601, 699, 700, 703, 721, 726]
+      //Input_0_OrderParam: {getCouponId=(Long) null (Long) null, getCartIds=stack0, getUseIntegration=3585 3585 3585}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Integer integer0 = new Integer((-2142569495));
-      Integer integer1 = new Integer(1049);
+      Integer integer0 = new Integer(3585);
       //mock umsIntegrationConsumeSetting0
       UmsIntegrationConsumeSetting umsIntegrationConsumeSetting0 = mock(UmsIntegrationConsumeSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(umsIntegrationConsumeSetting0).getCouponStatus();
-      doReturn(integer1).when(umsIntegrationConsumeSetting0).getUseUnit();
+      doReturn(integer0).when(umsIntegrationConsumeSetting0).getMaxPercentPerOrder();
+      doReturn(integer0, integer0).when(umsIntegrationConsumeSetting0).getUseUnit();
       //mock umsIntegrationConsumeSettingMapper0
       UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
-      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
-      Integer integer2 = new Integer((-3974));
-      Long long0 = new Long(0L);
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      Long long0 = new Long(250L);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(umsMember0).getId();
-      doReturn(integer1).when(umsMember0).getIntegration();
+      doReturn(integer0).when(umsMember0).getIntegration();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
-      LinkedList<Long> linkedList1 = new LinkedList<Long>();
+      Stack<Long> stack0 = new Stack<Long>();
       //mock orderParam0
       OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList1).when(orderParam0).getCartIds();
-      doReturn((Long) null, long0).when(orderParam0).getCouponId();
-      doReturn(integer1, integer2, integer2).when(orderParam0).getUseIntegration();
+      doReturn(stack0).when(orderParam0).getCartIds();
+      doReturn((Long) null, (Long) null).when(orderParam0).getCouponId();
+      doReturn(integer0, integer0, integer0).when(orderParam0).getUseIntegration();
       
       //Call method: generateOrder
       // Undeclared exception!
@@ -992,40 +1124,53 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_generateOrder_26()  throws Throwable  {
-      //caseID:f131ab3430c9fb7883ece3a9a219844c
-      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 146, 147, 148, 149, 578, 580, 585, 586, 591, 592, 696, 697, 700, 718, 723]
-      //Input_0_OrderParam: {getCouponId=(Long) null (Long) null, getCartIds=arrayList0, getUseIntegration=1 1 0}
+      //caseID:103aa1af3b9559990cad1dde62a45de1
+      //CoveredLines: [33, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 721, 722, 723]
+      //Input_0_OrderParam: {getCartIds=linkedList0}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Integer integer0 = new Integer(1);
-      //mock umsIntegrationConsumeSetting0
-      UmsIntegrationConsumeSetting umsIntegrationConsumeSetting0 = mock(UmsIntegrationConsumeSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(umsIntegrationConsumeSetting0).getUseUnit();
-      //mock umsIntegrationConsumeSettingMapper0
-      UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
-      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
+      BigDecimal bigDecimal0 = BigDecimal.ONE;
+      Integer integer0 = new Integer(35);
+      Integer integer1 = new Integer(0);
+      Long long0 = new Long(2868L);
+      //mock cartPromotionItem0
+      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(bigDecimal0).when(cartPromotionItem0).getPrice();
+      doReturn("100").when(cartPromotionItem0).getProductAttr();
+      doReturn("0").when(cartPromotionItem0).getProductBrand();
+      doReturn(long0).when(cartPromotionItem0).getProductCategoryId();
+      doReturn(long0).when(cartPromotionItem0).getProductId();
+      doReturn("100").when(cartPromotionItem0).getProductName();
+      doReturn("reactor.core.publisher.ReplayProcessor").when(cartPromotionItem0).getProductPic();
+      doReturn("O,=bzDr[").when(cartPromotionItem0).getProductSkuCode();
+      doReturn(long0).when(cartPromotionItem0).getProductSkuId();
+      doReturn("%02d").when(cartPromotionItem0).getProductSn();
+      doReturn(integer1).when(cartPromotionItem0).getQuantity();
+      doReturn(integer0).when(cartPromotionItem0).getGrowth();
+      doReturn(integer0).when(cartPromotionItem0).getIntegration();
+      doReturn("Access-Control-Allow-Origin").when(cartPromotionItem0).getPromotionMessage();
+      doReturn(integer0, integer1).when(cartPromotionItem0).getRealStock();
+      doReturn(bigDecimal0).when(cartPromotionItem0).getReduceAmount();
+      
+      arrayList0.add(cartPromotionItem0);
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
-      Long long0 = new Long((-1L));
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(umsMember0).getId();
-      doReturn(integer0).when(umsMember0).getIntegration();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
-      ArrayList<Long> arrayList0 = new ArrayList<Long>();
-      Integer integer1 = new Integer(0);
+      LinkedList<Long> linkedList0 = new LinkedList<Long>();
       //mock orderParam0
       OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(orderParam0).getCartIds();
-      doReturn((Long) null, (Long) null).when(orderParam0).getCouponId();
-      doReturn(integer0, integer0, integer1).when(orderParam0).getUseIntegration();
+      doReturn(linkedList0).when(orderParam0).getCartIds();
       
       //Call method: generateOrder
       // Undeclared exception!
@@ -1034,24 +1179,25 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       } catch(Throwable e) {
          verifyException("com.macro.mall.common.exception.Asserts", e);
          assertEquals("com.macro.mall.common.exception.ApiException", e.getClass().getName());
-         assertEquals("\u79EF\u5206\u4E0D\u53EF\u7528", e.getMessage());
+         assertEquals("\u5E93\u5B58\u4E0D\u8DB3\uFF0C\u65E0\u6CD5\u4E0B\u5355", e.getMessage());
       }
   }
 
   @Test(timeout = 4000)
   public void test_generateOrder_27()  throws Throwable  {
-      //caseID:35b7c9f8b7f790bc05081f3a2edba1a6
-      //CoveredLines: [33, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 718, 719, 720]
-      //Input_0_OrderParam: {getCartIds=stack0}
+      //caseID:74554d6baa583fbd99956d44b3e0f8ce
+      //CoveredLines: [33, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 121, 721, 722, 723]
+      //Input_0_OrderParam: {getCartIds=linkedList1}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Vector<CartPromotionItem> vector0 = new Vector<CartPromotionItem>();
+      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
       //mock cartPromotionItem0
       CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      vector0.add(cartPromotionItem0);
+      
+      linkedList0.add(cartPromotionItem0);
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(vector0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
+      doReturn(linkedList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
       Long long0 = new Long(0L);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
@@ -1059,12 +1205,14 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
-      Stack<Long> stack0 = new Stack<Long>();
+      LinkedList<Long> linkedList1 = new LinkedList<Long>();
       //mock orderParam0
       OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(stack0).when(orderParam0).getCartIds();
+      doReturn(linkedList1).when(orderParam0).getCartIds();
       
       //Call method: generateOrder
       // Undeclared exception!
@@ -1079,63 +1227,53 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
 
   @Test(timeout = 4000)
   public void test_generateOrder_28()  throws Throwable  {
-      //caseID:55e204e51fb728ce8660a5bb4de203ac
-      //CoveredLines: [33, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 124, 131, 132, 133, 683, 684, 685, 688, 689, 718, 719, 722, 723]
-      //Input_0_OrderParam: {getCouponId=2977L 2977L, getCartIds=linkedList2}
+      //caseID:c6d0b04e626a90ba58da3990a515912a
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 131, 132, 136, 139, 146, 147, 148, 149, 581, 583, 584, 613, 614, 617, 626, 686, 687, 688, 689, 699, 700, 703, 721, 726]
+      //Input_0_OrderParam: {getCouponId=201L 201L 201L, getCartIds=stack0, getUseIntegration=61 61 61}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
-      BigDecimal bigDecimal0 = new BigDecimal(273.63329484289);
-      Integer integer0 = new Integer(60);
-      Long long0 = new Long(2977L);
-      //mock cartPromotionItem0
-      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(cartPromotionItem0).getPrice();
-      doReturn("\u8BE5\u4F18\u60E0\u5238\u4E0D\u53EF\u7528").when(cartPromotionItem0).getProductAttr();
-      doReturn("").when(cartPromotionItem0).getProductBrand();
-      doReturn(long0).when(cartPromotionItem0).getProductCategoryId();
-      doReturn(long0).when(cartPromotionItem0).getProductId();
-      doReturn("e8@hK,W;9").when(cartPromotionItem0).getProductName();
-      doReturn("freight_amount is not null").when(cartPromotionItem0).getProductPic();
-      doReturn("Z7`OWyco+:E").when(cartPromotionItem0).getProductSkuCode();
-      doReturn(long0).when(cartPromotionItem0).getProductSkuId();
-      doReturn("%06d").when(cartPromotionItem0).getProductSn();
-      doReturn(integer0).when(cartPromotionItem0).getQuantity();
-      doReturn(integer0).when(cartPromotionItem0).getGrowth();
-      doReturn(integer0).when(cartPromotionItem0).getIntegration();
-      doReturn("3").when(cartPromotionItem0).getPromotionMessage();
-      doReturn(integer0, integer0).when(cartPromotionItem0).getRealStock();
-      doReturn(bigDecimal0).when(cartPromotionItem0).getReduceAmount();
-      linkedList0.add(cartPromotionItem0);
+      Integer integer0 = new Integer(61);
+      Integer integer1 = new Integer(20);
+      Long long0 = new Long(201L);
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(linkedList0).when(omsCartItemService0).listPromotion(nullable(java.lang.Long.class) , nullable(java.util.List.class));
       LinkedList<SmsCouponHistoryDetail> linkedList1 = new LinkedList<SmsCouponHistoryDetail>();
-      Long long1 = new Long(626L);
       //mock smsCoupon0
       SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(long1).when(smsCoupon0).getId();
+      doReturn(long0).when(smsCoupon0).getId();
+      //mock smsCoupon1
+      SmsCoupon smsCoupon1 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0, integer1, integer1).when(smsCoupon1).getUseType();
       //mock smsCouponHistoryDetail0
       SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(smsCoupon0).when(smsCouponHistoryDetail0).getCoupon();
+      doReturn("1.0").when(smsCouponHistoryDetail0).toString();
+      doReturn(smsCoupon0, smsCoupon1).when(smsCouponHistoryDetail0).getCoupon();
+      
       linkedList1.add(smsCouponHistoryDetail0);
       //mock umsMemberCouponService0
       UmsMemberCouponService umsMemberCouponService0 = mock(UmsMemberCouponService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(linkedList1).when(umsMemberCouponService0).listCart(ArgumentMatchers.<com.macro.mall.portal.domain.CartPromotionItem>anyList() , anyInt());
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(long1).when(umsMember0).getId();
+      doReturn(long0).when(umsMember0).getId();
+      doReturn(integer1).when(umsMember0).getIntegration();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberCouponService", (Object) umsMemberCouponService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
-      LinkedList<Long> linkedList2 = new LinkedList<Long>();
+      Stack<Long> stack0 = new Stack<Long>();
       //mock orderParam0
       OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList2).when(orderParam0).getCartIds();
-      doReturn(long0, long0).when(orderParam0).getCouponId();
+      doReturn(stack0).when(orderParam0).getCartIds();
+      doReturn(long0, long0, long0).when(orderParam0).getCouponId();
+      doReturn(integer0, integer0, integer0).when(orderParam0).getUseIntegration();
       
       //Call method: generateOrder
       // Undeclared exception!
@@ -1144,84 +1282,92 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       } catch(Throwable e) {
          verifyException("com.macro.mall.common.exception.Asserts", e);
          assertEquals("com.macro.mall.common.exception.ApiException", e.getClass().getName());
-         assertEquals("\u8BE5\u4F18\u60E0\u5238\u4E0D\u53EF\u7528", e.getMessage());
+         assertEquals("\u79EF\u5206\u4E0D\u53EF\u7528", e.getMessage());
       }
   }
 
   @Test(timeout = 4000)
   public void test_generateOrder_29()  throws Throwable  {
-      //caseID:a264a6fa001a2091de4ef283afe62be9
-      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 141, 159, 161, 163, 164, 165, 166, 167, 168, 169, 172, 173, 175, 179, 180, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 216, 220, 221, 225, 227, 231, 236, 238, 239, 240, 241, 242, 323, 324, 326, 327, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 432, 439, 440, 443, 444, 450, 451, 454, 461, 462, 465, 491, 499, 505, 506, 510, 511, 514, 522, 523, 524, 525, 526, 527, 534, 535, 540, 547, 548, 553, 560, 561, 566, 696, 697, 700, 707, 712, 718, 723]
-      //Input_0_OrderParam: {getCouponId=(Long) null 0L 0L (Long) null, getPayType=4, getCartIds=linkedList1, getMemberReceiveAddressId=0L, getUseIntegration=0 0 0 (Integer) null (Integer) null}
+      //caseID:e872a346e93867fba1ce84c64d65de07
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 141, 159, 161, 163, 164, 165, 166, 167, 168, 169, 172, 173, 175, 179, 180, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 216, 220, 221, 225, 227, 231, 236, 238, 239, 240, 241, 242, 326, 327, 329, 330, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 435, 442, 443, 446, 447, 453, 454, 457, 464, 465, 468, 494, 502, 508, 509, 513, 514, 517, 525, 526, 527, 528, 529, 530, 537, 538, 543, 550, 551, 556, 563, 564, 569, 699, 700, 703, 710, 715, 721, 726]
+      //Input_0_OrderParam: {getCouponId=(Long) null 357L 357L (Long) null, getPayType=0, getCartIds=vector0, getMemberReceiveAddressId=357L, getUseIntegration=(Integer) null 0 0 (Integer) null}
       //Assert: assertEquals(2, method_result.size());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(0L);
+      Long long0 = new Long(357L);
       //mock redisService0
       RedisService redisService0 = mock(RedisService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(redisService0).incr(anyString() , anyLong());
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(60).when(omsOrderMapper0).insert(any(com.macro.mall.model.OmsOrder.class));
-      Integer integer0 = new Integer(4);
+      doReturn(84).when(omsOrderMapper0).insert(any(com.macro.mall.model.OmsOrder.class));
+      LinkedList<OmsOrderSetting> linkedList0 = new LinkedList<OmsOrderSetting>();
+      Integer integer0 = new Integer(0);
       //mock omsOrderSetting0
       OmsOrderSetting omsOrderSetting0 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(omsOrderSetting0).getNormalOrderOvertime();
-      ArrayList<OmsOrderSetting> arrayList0 = new ArrayList<OmsOrderSetting>();
+      doReturn(integer0).when(omsOrderSetting0).getConfirmOvertime();
+      
+      linkedList0.add(omsOrderSetting0);
       //mock omsOrderSetting1
       OmsOrderSetting omsOrderSetting1 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(omsOrderSetting1).getConfirmOvertime();
-      arrayList0.add(omsOrderSetting1);
+      doReturn(integer0).when(omsOrderSetting1).getNormalOrderOvertime();
       //mock omsOrderSettingMapper0
       OmsOrderSettingMapper omsOrderSettingMapper0 = mock(OmsOrderSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(omsOrderSettingMapper0).selectByExample(any(com.macro.mall.model.OmsOrderSettingExample.class));
-      doReturn(omsOrderSetting0).when(omsOrderSettingMapper0).selectByPrimaryKey(anyLong());
+      doReturn(linkedList0).when(omsOrderSettingMapper0).selectByExample(any(com.macro.mall.model.OmsOrderSettingExample.class));
+      doReturn(omsOrderSetting1).when(omsOrderSettingMapper0).selectByPrimaryKey(anyLong());
       //mock cancelOrderSender0
       CancelOrderSender cancelOrderSender0 = mock(CancelOrderSender.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       //mock portalOrderItemDao0
       PortalOrderItemDao portalOrderItemDao0 = mock(PortalOrderItemDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(0).when(portalOrderItemDao0).insertList(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
-      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
-      Integer integer1 = new Integer(0);
+      doReturn((-1431655764)).when(portalOrderItemDao0).insertList(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
       //mock omsCartItemService0
       OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(6).when(omsCartItemService0).delete(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
-      doReturn(linkedList0).when(omsCartItemService0).listPromotion(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      doReturn(60).when(omsCartItemService0).delete(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
       //mock umsMemberReceiveAddress0
       UmsMemberReceiveAddress umsMemberReceiveAddress0 = mock(UmsMemberReceiveAddress.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("\u79EF\u5206\u4E0D\u53EF\u7528").when(umsMemberReceiveAddress0).getCity();
-      doReturn("create_time desc").when(umsMemberReceiveAddress0).getDetailAddress();
-      doReturn("io.lettuce.core.dynamic.ReactiveTypeAdapters$RxJava3ObservableToMaybeAdapter").when(umsMemberReceiveAddress0).getName();
-      doReturn("onAllDataRead;;").when(umsMemberReceiveAddress0).getPhoneNumber();
-      doReturn("").when(umsMemberReceiveAddress0).getPostCode();
-      doReturn("\u4E0D\u80FD\u786E\u8BA4\u4ED6\u4EBA\u8BA2\u5355\uFF01").when(umsMemberReceiveAddress0).getProvince();
-      doReturn("\u4E0D\u80FD\u786E\u8BA4\u4ED6\u4EBA\u8BA2\u5355\uFF01").when(umsMemberReceiveAddress0).getRegion();
+      doReturn("1").when(umsMemberReceiveAddress0).getCity();
+      doReturn("%02d").when(umsMemberReceiveAddress0).getDetailAddress();
+      doReturn("-2146934557").when(umsMemberReceiveAddress0).getName();
+      doReturn("\u8BE5\u8BA2\u5355\u8FD8\u672A\u53D1\u8D27\uFF01").when(umsMemberReceiveAddress0).getPhoneNumber();
+      doReturn("elastic-evictor-").when(umsMemberReceiveAddress0).getPostCode();
+      doReturn(":").when(umsMemberReceiveAddress0).getProvince();
+      doReturn("\u79EF\u5206\u4E0D\u53EF\u7528").when(umsMemberReceiveAddress0).getRegion();
       //mock umsMemberReceiveAddressService0
       UmsMemberReceiveAddressService umsMemberReceiveAddressService0 = mock(UmsMemberReceiveAddressService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMemberReceiveAddress0).when(umsMemberReceiveAddressService0).getItem(nullable(java.lang.Long.class));
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0, long0, long0).when(umsMember0).getId();
-      doReturn("1000").when(umsMember0).getUsername();
+      doReturn("42").when(umsMember0).getUsername();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberReceiveAddressService", (Object) umsMemberReceiveAddressService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemDao", (Object) portalOrderItemDao0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cancelOrderSender", (Object) cancelOrderSender0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderSettingMapper", (Object) omsOrderSettingMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "redisService", (Object) redisService0);
-      LinkedList<Long> linkedList1 = new LinkedList<Long>();
+      Vector<Long> vector0 = new Vector<Long>();
       //mock orderParam0
       OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList1).when(orderParam0).getCartIds();
+      doReturn(vector0).when(orderParam0).getCartIds();
       doReturn((Long) null, long0, long0, (Long) null).when(orderParam0).getCouponId();
       doReturn(long0).when(orderParam0).getMemberReceiveAddressId();
       doReturn(integer0).when(orderParam0).getPayType();
-      doReturn(integer1, integer1, integer1, (Integer) null, (Integer) null).when(orderParam0).getUseIntegration();
+      doReturn((Integer) null, integer0, integer0, (Integer) null).when(orderParam0).getUseIntegration();
       
       //Call method: generateOrder
       Map<String, Object> map0 = omsPortalOrderServiceImpl0.generateOrder(orderParam0);
@@ -1231,19 +1377,238 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_generateOrderSn_30()  throws Throwable  {
-      //caseID:de9879d3d3fb25aab382033850e9facc
-      //CoveredLines: [33, 419, 420, 421, 422, 423, 424, 425, 426, 427, 430, 432]
-      //Input_0_OmsOrder: {getPayType=419, getSourceType=419}
-      //Assert: assertEquals("201402144194191000000", method_result);
+  public void test_generateOrder_30()  throws Throwable  {
+      //caseID:d206d9726ebb6f0105cf526e1324abab
+      //CoveredLines: [33, 95, 97, 98, 99, 120, 124, 126, 139, 141, 159, 161, 163, 164, 165, 166, 167, 168, 169, 172, 173, 175, 176, 177, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 216, 220, 221, 225, 227, 228, 231, 236, 238, 239, 240, 241, 242, 326, 327, 329, 330, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 435, 442, 443, 446, 447, 453, 454, 457, 464, 465, 468, 479, 481, 482, 483, 484, 485, 486, 487, 488, 489, 491, 494, 502, 508, 509, 513, 514, 517, 525, 526, 527, 528, 529, 530, 550, 551, 556, 563, 564, 569, 699, 700, 703, 710, 715, 721, 726]
+      //Input_0_OrderParam: {getCouponId=(Long) null 379L (Long) null 379L 379L, getPayType=47, getCartIds=vector0, getMemberReceiveAddressId=379L, getUseIntegration=(Integer) null (Integer) null (Integer) null}
+      //Assert: assertEquals(2, method_result.size());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Long long0 = new Long(1000000L);
+      Long long0 = new Long(379L);
       //mock redisService0
       RedisService redisService0 = mock(RedisService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(redisService0).incr(anyString() , anyLong());
+      //mock omsOrderMapper0
+      OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(1661).when(omsOrderMapper0).insert(any(com.macro.mall.model.OmsOrder.class));
+      Integer integer0 = new Integer(47);
+      //mock omsOrderSetting0
+      OmsOrderSetting omsOrderSetting0 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(omsOrderSetting0).getNormalOrderOvertime();
+      LinkedList<OmsOrderSetting> linkedList0 = new LinkedList<OmsOrderSetting>();
+      //mock omsOrderSetting1
+      OmsOrderSetting omsOrderSetting1 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(omsOrderSetting1).getConfirmOvertime();
+      
+      linkedList0.add(omsOrderSetting1);
+      //mock omsOrderSettingMapper0
+      OmsOrderSettingMapper omsOrderSettingMapper0 = mock(OmsOrderSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(linkedList0).when(omsOrderSettingMapper0).selectByExample(any(com.macro.mall.model.OmsOrderSettingExample.class));
+      doReturn(omsOrderSetting0).when(omsOrderSettingMapper0).selectByPrimaryKey(anyLong());
+      Stack<SmsCouponHistory> stack0 = new Stack<SmsCouponHistory>();
+      //mock smsCouponHistory0
+      SmsCouponHistory smsCouponHistory0 = mock(SmsCouponHistory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
+      stack0.add(smsCouponHistory0);
+      //mock smsCouponHistoryMapper0
+      SmsCouponHistoryMapper smsCouponHistoryMapper0 = mock(SmsCouponHistoryMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack0).when(smsCouponHistoryMapper0).selectByExample(any(com.macro.mall.model.SmsCouponHistoryExample.class));
+      doReturn(835).when(smsCouponHistoryMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.SmsCouponHistory.class));
+      //mock cancelOrderSender0
+      CancelOrderSender cancelOrderSender0 = mock(CancelOrderSender.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      //mock portalOrderItemDao0
+      PortalOrderItemDao portalOrderItemDao0 = mock(PortalOrderItemDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(100).when(portalOrderItemDao0).insertList(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
+      ArrayList<CartPromotionItem> arrayList0 = new ArrayList<CartPromotionItem>();
+      //mock omsCartItemService0
+      OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(420).when(omsCartItemService0).delete(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      doReturn(arrayList0).when(omsCartItemService0).listPromotion(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      //mock umsMemberReceiveAddress0
+      UmsMemberReceiveAddress umsMemberReceiveAddress0 = mock(UmsMemberReceiveAddress.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(";").when(umsMemberReceiveAddress0).getCity();
+      doReturn("222").when(umsMemberReceiveAddress0).getDetailAddress();
+      doReturn("real_amount is null").when(umsMemberReceiveAddress0).getName();
+      doReturn("1.0").when(umsMemberReceiveAddress0).getPhoneNumber();
+      doReturn("&:Y6|go{'wm").when(umsMemberReceiveAddress0).getPostCode();
+      doReturn("1655").when(umsMemberReceiveAddress0).getProvince();
+      doReturn("6").when(umsMemberReceiveAddress0).getRegion();
+      //mock umsMemberReceiveAddressService0
+      UmsMemberReceiveAddressService umsMemberReceiveAddressService0 = mock(UmsMemberReceiveAddressService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsMemberReceiveAddress0).when(umsMemberReceiveAddressService0).getItem(nullable(java.lang.Long.class));
+      //mock umsMember0
+      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0, long0, long0, long0).when(umsMember0).getId();
+      doReturn("Authenticated '").when(umsMember0).getUsername();
+      //mock umsMemberService0
+      UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberReceiveAddressService", (Object) umsMemberReceiveAddressService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemDao", (Object) portalOrderItemDao0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cancelOrderSender", (Object) cancelOrderSender0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "couponHistoryMapper", (Object) smsCouponHistoryMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderSettingMapper", (Object) omsOrderSettingMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "redisService", (Object) redisService0);
-      Integer integer0 = new Integer(419);
+      Vector<Long> vector0 = new Vector<Long>();
+      //mock orderParam0
+      OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(vector0).when(orderParam0).getCartIds();
+      doReturn((Long) null, long0, (Long) null, long0, long0).when(orderParam0).getCouponId();
+      doReturn(long0).when(orderParam0).getMemberReceiveAddressId();
+      doReturn(integer0).when(orderParam0).getPayType();
+      doReturn((Integer) null, (Integer) null, (Integer) null).when(orderParam0).getUseIntegration();
+      
+      //Call method: generateOrder
+      Map<String, Object> map0 = omsPortalOrderServiceImpl0.generateOrder(orderParam0);
+      
+      //Test Result Assert
+      assertEquals(2, map0.size());
+  }
+
+  @Test(timeout = 4000)
+  public void test_generateOrder_31()  throws Throwable  {
+      //caseID:3b66eba751b2aedac973006810d11ef2
+      //CoveredLines: [33, 95, 97, 98, 99, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 120, 124, 126, 127, 128, 139, 141, 142, 143, 159, 161, 163, 164, 165, 166, 167, 168, 169, 170, 175, 179, 180, 182, 184, 185, 186, 188, 190, 192, 194, 196, 197, 198, 199, 200, 201, 202, 203, 205, 206, 208, 210, 212, 214, 215, 220, 221, 222, 223, 224, 225, 227, 228, 231, 236, 238, 239, 240, 241, 242, 326, 327, 329, 330, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 435, 442, 443, 444, 445, 446, 447, 453, 454, 455, 456, 457, 464, 465, 466, 467, 468, 479, 494, 496, 497, 498, 499, 500, 501, 502, 508, 509, 510, 511, 512, 513, 514, 515, 517, 525, 526, 527, 528, 529, 530, 537, 538, 539, 540, 542, 543, 563, 564, 565, 566, 568, 569, 699, 700, 701, 702, 703, 710, 711, 712, 713, 714, 715, 721, 722, 725, 726]
+      //Input_0_OrderParam: {getCouponId=(Long) null (Long) null 0L (Long) null, getPayType=60, getCartIds=vector0, getMemberReceiveAddressId=0L, getUseIntegration=(Integer) null 60 60 (Integer) null}
+      //Assert: assertEquals(2, method_result.size());
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Long long0 = new Long(0L);
+      //mock redisService0
+      RedisService redisService0 = mock(RedisService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(redisService0).incr(anyString() , anyLong());
+      //mock omsOrderMapper0
+      OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn((-389)).when(omsOrderMapper0).insert(any(com.macro.mall.model.OmsOrder.class));
+      ArrayList<OmsOrderSetting> arrayList0 = new ArrayList<OmsOrderSetting>();
+      Integer integer0 = new Integer(60);
+      //mock omsOrderSetting0
+      OmsOrderSetting omsOrderSetting0 = mock(OmsOrderSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(omsOrderSetting0).getNormalOrderOvertime();
+      //mock omsOrderSettingMapper0
+      OmsOrderSettingMapper omsOrderSettingMapper0 = mock(OmsOrderSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(arrayList0).when(omsOrderSettingMapper0).selectByExample(any(com.macro.mall.model.OmsOrderSettingExample.class));
+      doReturn(omsOrderSetting0).when(omsOrderSettingMapper0).selectByPrimaryKey(anyLong());
+      //mock pmsSkuStock0
+      PmsSkuStock pmsSkuStock0 = mock(PmsSkuStock.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(pmsSkuStock0).getLockStock();
+      //mock pmsSkuStockMapper0
+      PmsSkuStockMapper pmsSkuStockMapper0 = mock(PmsSkuStockMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(pmsSkuStock0).when(pmsSkuStockMapper0).selectByPrimaryKey(anyLong());
+      doReturn(2147483645).when(pmsSkuStockMapper0).updateByPrimaryKeySelective(any(com.macro.mall.model.PmsSkuStock.class));
+      //mock cancelOrderSender0
+      CancelOrderSender cancelOrderSender0 = mock(CancelOrderSender.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      //mock portalOrderItemDao0
+      PortalOrderItemDao portalOrderItemDao0 = mock(PortalOrderItemDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(3861).when(portalOrderItemDao0).insertList(ArgumentMatchers.<com.macro.mall.model.OmsOrderItem>anyList());
+      LinkedList<CartPromotionItem> linkedList0 = new LinkedList<CartPromotionItem>();
+      BigDecimal bigDecimal0 = new BigDecimal((-2145557651));
+      Integer integer1 = new Integer(1);
+      //mock cartPromotionItem0
+      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(cartPromotionItem0).getId();
+      doReturn(bigDecimal0).when(cartPromotionItem0).getPrice();
+      doReturn("product_sn between").when(cartPromotionItem0).getProductAttr();
+      doReturn("zmSFvFdB").when(cartPromotionItem0).getProductBrand();
+      doReturn(long0).when(cartPromotionItem0).getProductCategoryId();
+      doReturn(long0).when(cartPromotionItem0).getProductId();
+      doReturn("product_sku_id >").when(cartPromotionItem0).getProductName();
+      doReturn("86b3Dk%&mG").when(cartPromotionItem0).getProductPic();
+      doReturn("22").when(cartPromotionItem0).getProductSkuCode();
+      doReturn(long0, long0).when(cartPromotionItem0).getProductSkuId();
+      doReturn("A[j8,|9ny8").when(cartPromotionItem0).getProductSn();
+      doReturn(integer0, integer0).when(cartPromotionItem0).getQuantity();
+      doReturn(integer0).when(cartPromotionItem0).getGrowth();
+      doReturn(integer0).when(cartPromotionItem0).getIntegration();
+      doReturn("C.+$Z[r=}jjZ&hW8@O").when(cartPromotionItem0).getPromotionMessage();
+      doReturn(integer0, integer1).when(cartPromotionItem0).getRealStock();
+      doReturn(bigDecimal0).when(cartPromotionItem0).getReduceAmount();
+      
+      linkedList0.add(cartPromotionItem0);
+      //mock omsCartItemService0
+      OmsCartItemService omsCartItemService0 = mock(OmsCartItemService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(2048).when(omsCartItemService0).delete(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      doReturn(linkedList0).when(omsCartItemService0).listPromotion(anyLong() , ArgumentMatchers.<java.lang.Long>anyList());
+      //mock umsMemberReceiveAddress0
+      UmsMemberReceiveAddress umsMemberReceiveAddress0 = mock(UmsMemberReceiveAddress.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn("-2146694999").when(umsMemberReceiveAddress0).getCity();
+      doReturn(";").when(umsMemberReceiveAddress0).getDetailAddress();
+      doReturn("-1").when(umsMemberReceiveAddress0).getName();
+      doReturn("-1").when(umsMemberReceiveAddress0).getPhoneNumber();
+      doReturn("26").when(umsMemberReceiveAddress0).getPostCode();
+      doReturn("2233").when(umsMemberReceiveAddress0).getProvince();
+      doReturn("io.lettuce.core.masterslave.SentinelTopologyRefresh$SentinelReconnectMessagePredicate").when(umsMemberReceiveAddress0).getRegion();
+      //mock umsMemberReceiveAddressService0
+      UmsMemberReceiveAddressService umsMemberReceiveAddressService0 = mock(UmsMemberReceiveAddressService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsMemberReceiveAddress0).when(umsMemberReceiveAddressService0).getItem(nullable(java.lang.Long.class));
+      //mock umsMember0
+      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0, long0, long0, long0).when(umsMember0).getId();
+      doReturn("J>AG=").when(umsMember0).getUsername();
+      //mock umsMemberService0
+      UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberReceiveAddressService", (Object) umsMemberReceiveAddressService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cartItemService", (Object) omsCartItemService0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemDao", (Object) portalOrderItemDao0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "cancelOrderSender", (Object) cancelOrderSender0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "skuStockMapper", (Object) pmsSkuStockMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderSettingMapper", (Object) omsOrderSettingMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "redisService", (Object) redisService0);
+      Vector<Long> vector0 = new Vector<Long>();
+      //mock orderParam0
+      OrderParam orderParam0 = mock(OrderParam.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(vector0).when(orderParam0).getCartIds();
+      doReturn((Long) null, (Long) null, long0, (Long) null).when(orderParam0).getCouponId();
+      doReturn(long0).when(orderParam0).getMemberReceiveAddressId();
+      doReturn(integer0).when(orderParam0).getPayType();
+      doReturn((Integer) null, integer0, integer0, (Integer) null).when(orderParam0).getUseIntegration();
+      
+      //Call method: generateOrder
+      Map<String, Object> map0 = omsPortalOrderServiceImpl0.generateOrder(orderParam0);
+      
+      //Test Result Assert
+      assertEquals(2, map0.size());
+  }
+
+  @Test(timeout = 4000)
+  public void test_generateOrderSn_32()  throws Throwable  {
+      //caseID:7ee8f3236c2d8b4e4fdc227d9f3bf6c2
+      //CoveredLines: [33, 422, 423, 424, 425, 426, 427, 428, 429, 430, 433, 435]
+      //Input_0_com.macro.mall.model.OmsOrder: {getPayType=19, getSourceType=19}
+      //Assert: assertEquals("2014021419192147483647", method_result);
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Long long0 = new Long(2147483647L);
+      //mock redisService0
+      RedisService redisService0 = mock(RedisService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(redisService0).incr(anyString() , anyLong());
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "redisService", (Object) redisService0);
+      Integer integer0 = new Integer(19);
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0).when(omsOrder0).getPayType();
@@ -1253,17 +1618,17 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       Object object0 = PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "generateOrderSn", (Object) omsOrder0, (Class<?>) OmsOrder.class);
       
       //Test Result Assert
-      assertEquals("201402144194191000000", object0);
+      assertEquals("2014021419192147483647", object0);
   }
 
   @Test(timeout = 4000)
-  public void test_getCouponOrderItemByRelation_31()  throws Throwable  {
-      //caseID:3c6e57a469af0cedabf2625deb89ad10
-      //CoveredLines: [33, 647, 648, 673]
-      //Input_0_SmsCouponHistoryDetail: {}
-      //Input_1_OmsOrderItem>: stack0
-      //Input_2_int: 
-      //Assert: assertTrue(method_result.isEmpty());
+  public void test_getCouponOrderItemByRelation_33()  throws Throwable  {
+      //caseID:ecd753231c8202673a5bc6d7b59f6fa3
+      //CoveredLines: [33, 650, 651, 676]
+      //Input_0_com.macro.mall.portal.domain.SmsCouponHistoryDetail: {}
+      //Input_1_List<com.macro.mall.model.OmsOrderItem>: stack0
+      //Input_2_int: 60
+      //Assert: assertEquals(0, method_result.size());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       //mock smsCouponHistoryDetail0
@@ -1271,21 +1636,125 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       Stack<OmsOrderItem> stack0 = new Stack<OmsOrderItem>();
       
       //Call method: getCouponOrderItemByRelation
-      List<OmsOrderItem> list0 = (List<OmsOrderItem>)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getCouponOrderItemByRelation", (Object) smsCouponHistoryDetail0, (Class<?>) SmsCouponHistoryDetail.class, (Object) stack0, (Class<?>) List.class, (Object) (-2140533860), (Class<?>) int.class);
+      List<OmsOrderItem> list0 = (List<OmsOrderItem>)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getCouponOrderItemByRelation", (Object) smsCouponHistoryDetail0, (Class<?>) SmsCouponHistoryDetail.class, (Object) stack0, (Class<?>) List.class, (Object) 60, (Class<?>) int.class);
       
       //Test Result Assert
-      assertTrue(list0.isEmpty());
+      assertEquals(0, list0.size());
   }
 
   @Test(timeout = 4000)
-  public void test_getUseIntegrationAmount_32()  throws Throwable  {
-      //caseID:5b873e7511c3a44cb205a4f362566065
-      //CoveredLines: [33, 578, 580, 585, 586, 588]
+  public void test_getCouponOrderItemByRelation_34()  throws Throwable  {
+      //caseID:8f5cc772fbfc84e4c8a9ead9dc482871
+      //CoveredLines: [33, 650, 651, 664, 665, 666, 667, 668, 669, 672, 674, 676]
+      //Input_0_com.macro.mall.portal.domain.SmsCouponHistoryDetail: {getProductRelationList=stack0}
+      //Input_1_List<com.macro.mall.model.OmsOrderItem>: vector0
+      //Input_2_int: 1
+      //Assert: assertEquals(0, method_result.size());
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Stack<SmsCouponProductRelation> stack0 = new Stack<SmsCouponProductRelation>();
+      Long long0 = new Long(2565L);
+      //mock smsCouponProductRelation0
+      SmsCouponProductRelation smsCouponProductRelation0 = mock(SmsCouponProductRelation.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(smsCouponProductRelation0).getProductId();
+      
+      stack0.add(smsCouponProductRelation0);
+      //mock smsCouponHistoryDetail0
+      SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack0).when(smsCouponHistoryDetail0).getProductRelationList();
+      Vector<OmsOrderItem> vector0 = new Vector<OmsOrderItem>();
+      Long long1 = new Long(0L);
+      //mock omsOrderItem0
+      OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long1).when(omsOrderItem0).getProductId();
+      
+      vector0.add(omsOrderItem0);
+      
+      //Call method: getCouponOrderItemByRelation
+      List<OmsOrderItem> list0 = (List<OmsOrderItem>)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getCouponOrderItemByRelation", (Object) smsCouponHistoryDetail0, (Class<?>) SmsCouponHistoryDetail.class, (Object) vector0, (Class<?>) List.class, (Object) 1, (Class<?>) int.class);
+      
+      //Test Result Assert
+      assertEquals(0, list0.size());
+  }
+
+  @Test(timeout = 4000)
+  public void test_getCouponOrderItemByRelation_35()  throws Throwable  {
+      //caseID:73ec215d319d9dfbc745a88dde810905
+      //CoveredLines: [33, 650, 651, 652, 653, 654, 655, 656, 657, 660, 662, 663, 676]
+      //Input_0_com.macro.mall.portal.domain.SmsCouponHistoryDetail: {getCategoryRelationList=stack0}
+      //Input_1_List<com.macro.mall.model.OmsOrderItem>: vector0
+      //Input_2_int: 0
+      //Assert: assertEquals(0, method_result.size());
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Stack<SmsCouponProductCategoryRelation> stack0 = new Stack<SmsCouponProductCategoryRelation>();
+      Long long0 = new Long(1000L);
+      //mock smsCouponProductCategoryRelation0
+      SmsCouponProductCategoryRelation smsCouponProductCategoryRelation0 = mock(SmsCouponProductCategoryRelation.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(smsCouponProductCategoryRelation0).getProductCategoryId();
+      
+      stack0.add(smsCouponProductCategoryRelation0);
+      //mock smsCouponHistoryDetail0
+      SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(stack0).when(smsCouponHistoryDetail0).getCategoryRelationList();
+      Vector<OmsOrderItem> vector0 = new Vector<OmsOrderItem>();
+      Long long1 = new Long(1688L);
+      //mock omsOrderItem0
+      OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long1).when(omsOrderItem0).getProductCategoryId();
+      
+      vector0.add(omsOrderItem0);
+      
+      //Call method: getCouponOrderItemByRelation
+      List<OmsOrderItem> list0 = (List<OmsOrderItem>)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getCouponOrderItemByRelation", (Object) smsCouponHistoryDetail0, (Class<?>) SmsCouponHistoryDetail.class, (Object) vector0, (Class<?>) List.class, (Object) 0, (Class<?>) int.class);
+      
+      //Test Result Assert
+      assertEquals(0, list0.size());
+  }
+
+  @Test(timeout = 4000)
+  public void test_getUseCoupon_36()  throws Throwable  {
+      //caseID:2921be48cde924af407d0e1728165143
+      //CoveredLines: [33, 686, 687, 688, 691, 692]
+      //Input_0_List<com.macro.mall.portal.domain.CartPromotionItem>: stack0
+      //Input_1_Long: 2342L
+      //Assert: assertNull(method_result);
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      ArrayList<SmsCouponHistoryDetail> arrayList0 = new ArrayList<SmsCouponHistoryDetail>();
+      Long long0 = new Long(904L);
+      //mock smsCoupon0
+      SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(smsCoupon0).getId();
+      //mock smsCouponHistoryDetail0
+      SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(smsCoupon0).when(smsCouponHistoryDetail0).getCoupon();
+      
+      arrayList0.add(smsCouponHistoryDetail0);
+      //mock umsMemberCouponService0
+      UmsMemberCouponService umsMemberCouponService0 = mock(UmsMemberCouponService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(arrayList0).when(umsMemberCouponService0).listCart(ArgumentMatchers.<com.macro.mall.portal.domain.CartPromotionItem>anyList() , anyInt());
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberCouponService", (Object) umsMemberCouponService0);
+      Stack<CartPromotionItem> stack0 = new Stack<CartPromotionItem>();
+      Long long1 = new Long(2342L);
+      
+      //Call method: getUseCoupon
+      Object object0 = PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getUseCoupon", (Object) stack0, (Class<?>) List.class, (Object) long1, (Class<?>) Long.class);
+      
+      //Test Result Assert
+      assertNull(object0);
+  }
+
+  @Test(timeout = 4000)
+  public void test_getUseIntegrationAmount_37()  throws Throwable  {
+      //caseID:fb54f6c1ba2e2f6aa423ea60a267f377
+      //CoveredLines: [33, 581, 583, 588, 589, 591]
       //Input_0_Integer: 0
-      //Input_1_BigDecimal: BigDecimal.ONE
-      //Input_2_UmsMember: {getIntegration=0}
+      //Input_1_BigDecimal: BigDecimal.TEN
+      //Input_2_com.macro.mall.model.UmsMember: {getIntegration=0}
       //Input_3_boolean: true
-      //Assert: assertEquals((short)0, method_result.shortValue());
+      //Assert: assertEquals((byte)0, method_result.byteValue());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       Integer integer0 = new Integer(0);
@@ -1295,99 +1764,68 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsIntegrationConsumeSettingMapper0
       UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
-      BigDecimal bigDecimal0 = BigDecimal.ONE;
+      BigDecimal bigDecimal0 = BigDecimal.TEN;
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0).when(umsMember0).getIntegration();
       
       //Call method: getUseIntegrationAmount
       BigDecimal bigDecimal1 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getUseIntegrationAmount", (Object) integer0, (Class<?>) Integer.class, (Object) bigDecimal0, (Class<?>) BigDecimal.class, (Object) umsMember0, (Class<?>) UmsMember.class, (Object) true, (Class<?>) boolean.class);
+      
+      //Test Result Assert
+      assertEquals((byte)0, bigDecimal1.byteValue());
+  }
+
+  @Test(timeout = 4000)
+  public void test_getUseIntegrationAmount_38()  throws Throwable  {
+      //caseID:8a09bb01f36549f15e0726a39513af52
+      //CoveredLines: [33, 581, 583, 588, 589, 594, 598, 599, 600, 603]
+      //Input_0_Integer: 3
+      //Input_1_BigDecimal: BigDecimal.ZERO
+      //Input_2_com.macro.mall.model.UmsMember: {getIntegration=3}
+      //Input_3_boolean: false
+      //Assert: assertFalse(method_result.equals((Object)bigDecimal0));
+      //Assert: assertNotSame(method_result, bigDecimal0);
+      //Assert: assertEquals((short)0, method_result.shortValue());
+      
+      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
+      Integer integer0 = new Integer((-2146447215));
+      //mock umsIntegrationConsumeSetting0
+      UmsIntegrationConsumeSetting umsIntegrationConsumeSetting0 = mock(UmsIntegrationConsumeSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0).when(umsIntegrationConsumeSetting0).getMaxPercentPerOrder();
+      doReturn(integer0, integer0).when(umsIntegrationConsumeSetting0).getUseUnit();
+      //mock umsIntegrationConsumeSettingMapper0
+      UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
+      
+      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
+      Integer integer1 = new Integer(3);
+      BigDecimal bigDecimal0 = BigDecimal.ZERO;
+      //mock umsMember0
+      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer1).when(umsMember0).getIntegration();
+      
+      //Call method: getUseIntegrationAmount
+      BigDecimal bigDecimal1 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getUseIntegrationAmount", (Object) integer1, (Class<?>) Integer.class, (Object) bigDecimal0, (Class<?>) BigDecimal.class, (Object) umsMember0, (Class<?>) UmsMember.class, (Object) false, (Class<?>) boolean.class);
+      
+      //Test Result Assert
+      assertFalse(bigDecimal1.equals((Object)bigDecimal0));
+      
+      //Test Result Assert
+      assertNotSame(bigDecimal1, bigDecimal0);
       
       //Test Result Assert
       assertEquals((short)0, bigDecimal1.shortValue());
   }
 
   @Test(timeout = 4000)
-  public void test_getUseIntegrationAmount_33()  throws Throwable  {
-      //caseID:eb1a863286a849076fca82df4f6442fd
-      //CoveredLines: [33, 578, 580, 585, 586, 591, 595, 596, 597, 598]
-      //Input_0_Integer: 1
-      //Input_1_BigDecimal: BigDecimal.ZERO
-      //Input_2_UmsMember: {getIntegration=1}
-      //Input_3_boolean: true
-      //Assert: assertTrue(method_result.equals((Object)bigDecimal0));
-      //Assert: assertNotSame(method_result, bigDecimal0);
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Integer integer0 = new Integer(1);
-      //mock umsIntegrationConsumeSetting0
-      UmsIntegrationConsumeSetting umsIntegrationConsumeSetting0 = mock(UmsIntegrationConsumeSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(umsIntegrationConsumeSetting0).getCouponStatus();
-      doReturn(integer0).when(umsIntegrationConsumeSetting0).getMaxPercentPerOrder();
-      doReturn(integer0, integer0).when(umsIntegrationConsumeSetting0).getUseUnit();
-      //mock umsIntegrationConsumeSettingMapper0
-      UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
-      BigDecimal bigDecimal0 = BigDecimal.ZERO;
-      //mock umsMember0
-      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(umsMember0).getIntegration();
-      
-      //Call method: getUseIntegrationAmount
-      Object object0 = PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getUseIntegrationAmount", (Object) integer0, (Class<?>) Integer.class, (Object) bigDecimal0, (Class<?>) BigDecimal.class, (Object) umsMember0, (Class<?>) UmsMember.class, (Object) true, (Class<?>) boolean.class);
-      
-      //Test Result Assert
-      assertTrue(object0.equals((Object)bigDecimal0));
-      
-      //Test Result Assert
-      assertNotSame(object0, bigDecimal0);
-  }
-
-  @Test(timeout = 4000)
-  public void test_getUseIntegrationAmount_34()  throws Throwable  {
-      //caseID:44874ebabedb62e80a9c284a29acbf97
-      //CoveredLines: [33, 578, 580, 585, 586, 591, 595, 596, 597, 600]
-      //Input_0_Integer: 410
-      //Input_1_BigDecimal: BigDecimal.ONE
-      //Input_2_UmsMember: {getIntegration=410}
-      //Input_3_boolean: true
-      //Assert: assertEquals((short)1, method_result.shortValue());
-      //Assert: assertNotSame(method_result, bigDecimal0);
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Integer integer0 = new Integer(410);
-      //mock umsIntegrationConsumeSetting0
-      UmsIntegrationConsumeSetting umsIntegrationConsumeSetting0 = mock(UmsIntegrationConsumeSetting.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(umsIntegrationConsumeSetting0).getCouponStatus();
-      doReturn(integer0).when(umsIntegrationConsumeSetting0).getMaxPercentPerOrder();
-      doReturn(integer0, integer0).when(umsIntegrationConsumeSetting0).getUseUnit();
-      //mock umsIntegrationConsumeSettingMapper0
-      UmsIntegrationConsumeSettingMapper umsIntegrationConsumeSettingMapper0 = mock(UmsIntegrationConsumeSettingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(umsIntegrationConsumeSetting0).when(umsIntegrationConsumeSettingMapper0).selectByPrimaryKey(anyLong());
-      PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "integrationConsumeSettingMapper", (Object) umsIntegrationConsumeSettingMapper0);
-      BigDecimal bigDecimal0 = BigDecimal.ONE;
-      //mock umsMember0
-      UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(umsMember0).getIntegration();
-      
-      //Call method: getUseIntegrationAmount
-      BigDecimal bigDecimal1 = (BigDecimal)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "getUseIntegrationAmount", (Object) integer0, (Class<?>) Integer.class, (Object) bigDecimal0, (Class<?>) BigDecimal.class, (Object) umsMember0, (Class<?>) UmsMember.class, (Object) true, (Class<?>) boolean.class);
-      
-      //Test Result Assert
-      assertEquals((short)1, bigDecimal1.shortValue());
-      
-      //Test Result Assert
-      assertNotSame(bigDecimal1, bigDecimal0);
-  }
-
-  @Test(timeout = 4000)
-  public void test_handleCouponAmount_35()  throws Throwable  {
-      //caseID:8cdcb643b57eac117c60dcdf14274193
-      //CoveredLines: [33, 610, 611, 613, 623, 631, 632, 637, 696, 697, 700]
-      //Input_0_OmsOrderItem>: arrayList0
-      //Input_1_SmsCouponHistoryDetail: {getCoupon=smsCoupon0}
+  public void test_handleCouponAmount_39()  throws Throwable  {
+      //caseID:f4c7eb6109cd2f2cf72e9f1f46dfdd8c
+      //CoveredLines: [33, 613, 614, 616, 626, 634, 635, 640, 699, 700, 703]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: arrayList0
+      //Input_1_com.macro.mall.portal.domain.SmsCouponHistoryDetail: {getCoupon=smsCoupon0}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
@@ -1407,26 +1845,23 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_handleCouponAmount_36()  throws Throwable  {
-      //caseID:58af42862ae4cab3a0377fd1b419e5d3
-      //CoveredLines: [33, 610, 611, 614, 616, 617, 618, 623, 631, 632, 637, 647, 648, 649, 650, 651, 652, 653, 660, 673, 696, 697, 700]
-      //Input_0_OmsOrderItem>: arrayList0
-      //Input_1_SmsCouponHistoryDetail: {getCoupon=smsCoupon0, getCategoryRelationList=vector0}
+  public void test_handleCouponAmount_40()  throws Throwable  {
+      //caseID:11c0ac6456d3a78319efdff5fce3dfcc
+      //CoveredLines: [33, 613, 614, 617, 619, 620, 621, 626, 634, 635, 640, 650, 651, 652, 653, 656, 663, 676, 699, 700, 703]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: arrayList0
+      //Input_1_com.macro.mall.portal.domain.SmsCouponHistoryDetail: {getCoupon=smsCoupon0, getCategoryRelationList=arrayList1}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
-      Integer integer0 = new Integer(307);
+      Integer integer0 = new Integer(6);
       Integer integer1 = new Integer(1);
       //mock smsCoupon0
       SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(integer0, integer1).when(smsCoupon0).getUseType();
-      Vector<SmsCouponProductCategoryRelation> vector0 = new Vector<SmsCouponProductCategoryRelation>();
-      //mock smsCouponProductCategoryRelation0
-      SmsCouponProductCategoryRelation smsCouponProductCategoryRelation0 = mock(SmsCouponProductCategoryRelation.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      vector0.add(smsCouponProductCategoryRelation0);
+      ArrayList<SmsCouponProductCategoryRelation> arrayList1 = new ArrayList<SmsCouponProductCategoryRelation>();
       //mock smsCouponHistoryDetail0
       SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(vector0).when(smsCouponHistoryDetail0).getCategoryRelationList();
+      doReturn(arrayList1).when(smsCouponHistoryDetail0).getCategoryRelationList();
       doReturn(smsCoupon0).when(smsCouponHistoryDetail0).getCoupon();
       
       //Call method: handleCouponAmount
@@ -1437,33 +1872,34 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
   }
 
   @Test(timeout = 4000)
-  public void test_handleCouponAmount_37()  throws Throwable  {
-      //caseID:366532802f98d697f4fee17bf206d4f6
-      //CoveredLines: [33, 610, 611, 614, 620, 621, 623, 631, 632, 634, 635, 636, 637, 647, 648, 661, 662, 663, 664, 665, 666, 667, 671, 673, 696, 697, 698, 699, 700]
-      //Input_0_OmsOrderItem>: arrayList0
-      //Input_1_SmsCouponHistoryDetail: {getCoupon=smsCoupon0, getProductRelationList=stack0}
+  public void test_handleCouponAmount_41()  throws Throwable  {
+      //caseID:f816252f32047abd8b33ec4eaa283442
+      //CoveredLines: [33, 613, 614, 617, 623, 624, 634, 635, 637, 650, 651, 664, 665, 666, 667, 668, 669, 670, 674, 676, 699, 700, 701, 702, 703]
+      //Input_0_List<com.macro.mall.model.OmsOrderItem>: arrayList0
+      //Input_1_com.macro.mall.portal.domain.SmsCouponHistoryDetail: {getCoupon=smsCoupon0, getProductRelationList=stack0}
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
-      Integer integer0 = new Integer(2);
-      BigDecimal bigDecimal0 = BigDecimal.ZERO;
-      //mock smsCoupon0
-      SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(smsCoupon0).getAmount();
-      doReturn(integer0, integer0, integer0).when(smsCoupon0).getUseType();
-      Stack<SmsCouponProductRelation> stack0 = new Stack<SmsCouponProductRelation>();
-      Long long0 = new Long(8L);
-      //mock smsCouponProductRelation0
-      SmsCouponProductRelation smsCouponProductRelation0 = mock(SmsCouponProductRelation.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(long0).when(smsCouponProductRelation0).getProductId();
-      BigDecimal bigDecimal1 = new BigDecimal(3365L);
+      Integer integer0 = new Integer(100);
+      BigDecimal bigDecimal0 = new BigDecimal(0.0);
+      Long long0 = new Long(1527L);
       //mock omsOrderItem0
       OmsOrderItem omsOrderItem0 = mock(OmsOrderItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(omsOrderItem0).getProductId();
-      doReturn(bigDecimal1, bigDecimal1).when(omsOrderItem0).getProductPrice();
+      doReturn(bigDecimal0, bigDecimal0).when(omsOrderItem0).getProductPrice();
       doReturn(integer0).when(omsOrderItem0).getProductQuantity();
-      doReturn("2").when(omsOrderItem0).toString();
+      doReturn("\u5E93\u5B58\u4E0D\u8DB3\uFF0C\u65E0\u6CD5\u4E0B\u5355").when(omsOrderItem0).toString();
+      
       arrayList0.add(omsOrderItem0);
+      Integer integer1 = new Integer(2);
+      //mock smsCoupon0
+      SmsCoupon smsCoupon0 = mock(SmsCoupon.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(integer0, integer0, integer1).when(smsCoupon0).getUseType();
+      Stack<SmsCouponProductRelation> stack0 = new Stack<SmsCouponProductRelation>();
+      //mock smsCouponProductRelation0
+      SmsCouponProductRelation smsCouponProductRelation0 = mock(SmsCouponProductRelation.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      doReturn(long0).when(smsCouponProductRelation0).getProductId();
+      
       stack0.add(smsCouponProductRelation0);
       //mock smsCouponHistoryDetail0
       SmsCouponHistoryDetail smsCouponHistoryDetail0 = mock(SmsCouponHistoryDetail.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
@@ -1471,103 +1907,87 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       doReturn(stack0).when(smsCouponHistoryDetail0).getProductRelationList();
       
       //Call method: handleCouponAmount
-      PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "handleCouponAmount", (Object) arrayList0, (Class<?>) List.class, (Object) smsCouponHistoryDetail0, (Class<?>) SmsCouponHistoryDetail.class);
-      
-      //Test Result Assert
-      assertEquals(1, arrayList0.size());
+      try { 
+        PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "handleCouponAmount", (Object) arrayList0, (Class<?>) List.class, (Object) smsCouponHistoryDetail0, (Class<?>) SmsCouponHistoryDetail.class);
+      } catch(Throwable e) {
+         verifyException("java.math.BigDecimal", e);
+         assertEquals("java.lang.ArithmeticException", e.getClass().getName());
+         assertEquals("/ by zero", e.getMessage());
+      }
   }
 
   @Test(timeout = 4000)
-  public void test_hasStock_38()  throws Throwable  {
-      //caseID:619bd4987a6892f0a9594615977cd1f9
-      //CoveredLines: [33, 718, 719, 720]
-      //Input_0_CartPromotionItem>: vector0
-      //Assert: assertFalse(method_result);
-      
-      OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Vector<CartPromotionItem> vector0 = new Vector<CartPromotionItem>();
-      Integer integer0 = new Integer(0);
-      //mock cartPromotionItem0
-      CartPromotionItem cartPromotionItem0 = mock(CartPromotionItem.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(cartPromotionItem0).getRealStock();
-      vector0.add(cartPromotionItem0);
-      
-      //Call method: hasStock
-      boolean boolean0 = (boolean)PrivateAccess.callMethod((Class<OmsPortalOrderServiceImpl>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "hasStock", (Object) vector0, (Class<?>) List.class);
-      
-      //Test Result Assert
-      assertFalse(boolean0);
-  }
-
-  @Test(timeout = 4000)
-  public void test_list_39()  throws Throwable  {
-      //caseID:beea826bb291b78363984d2d26684fec
-      //CoveredLines: [33, 347, 350, 351, 352, 353, 354, 355, 356, 357, 359, 360, 361, 363, 364, 365, 366, 367, 368, 369]
-      //Input_0_Integer: 973
-      //Input_1_Integer: 973
-      //Input_2_Integer: 973
-      //Assert: assertEquals(0, (int)method_result.getTotalPage());
-      //Assert: assertEquals(1, (int)method_result.getPageNum());
+  public void test_list_42()  throws Throwable  {
+      //caseID:82022b8b8acf02d7b6f1ddc15714e3d0
+      //CoveredLines: [33, 350, 353, 354, 355, 356, 357, 358, 359, 360, 362, 363, 364, 366, 367, 368, 369, 370, 371, 372]
+      //Input_0_Integer: 3
+      //Input_1_Integer: 3
+      //Input_2_Integer: 3
       //Assert: assertEquals(0, (int)method_result.getPageSize());
       //Assert: assertEquals(0L, (long)method_result.getTotal());
+      //Assert: assertEquals(0, (int)method_result.getTotalPage());
+      //Assert: assertEquals(1, (int)method_result.getPageNum());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
-      Stack<OmsOrder> stack0 = new Stack<OmsOrder>();
+      ArrayList<OmsOrder> arrayList0 = new ArrayList<OmsOrder>();
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(stack0).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
-      Long long0 = new Long(1854L);
+      doReturn(arrayList0).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
+      Long long0 = new Long(1000000L);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(long0).when(umsMember0).getId();
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
-      Integer integer0 = new Integer(973);
+      Integer integer0 = new Integer(3);
       
       //Call method: list
       CommonPage<OmsOrderDetail> commonPage0 = omsPortalOrderServiceImpl0.list(integer0, integer0, integer0);
-      
-      //Test Result Assert
-      assertEquals(0, (int)commonPage0.getTotalPage());
-      
-      //Test Result Assert
-      assertEquals(1, (int)commonPage0.getPageNum());
       
       //Test Result Assert
       assertEquals(0, (int)commonPage0.getPageSize());
       
       //Test Result Assert
       assertEquals(0L, (long)commonPage0.getTotal());
+      
+      //Test Result Assert
+      assertEquals(0, (int)commonPage0.getTotalPage());
+      
+      //Test Result Assert
+      assertEquals(1, (int)commonPage0.getPageNum());
   }
 
   @Test(timeout = 4000)
-  public void test_list_40()  throws Throwable  {
-      //caseID:9f827c4f72ecaf855d3e9020fa43b4e0
-      //CoveredLines: [33, 347, 350, 351, 352, 353, 354, 355, 356, 357, 359, 360, 361, 363, 364, 365, 366, 367, 368, 372, 373, 374, 375, 376, 377, 378, 379, 380, 380, 381, 382, 383, 384, 385]
-      //Input_0_Integer: 65
-      //Input_1_Integer: 65
-      //Input_2_Integer: 65
-      //Assert: assertEquals(1, (int)method_result.getPageNum());
+  public void test_list_43()  throws Throwable  {
+      //caseID:2830009cd251d1902ac9fdb391610470
+      //CoveredLines: [33, 350, 353, 354, 355, 356, 357, 358, 359, 360, 362, 363, 364, 366, 367, 368, 369, 370, 371, 375, 376, 377, 378, 379, 380, 381, 382, 383, 383, 384, 385, 386, 387, 388]
+      //Input_0_Integer: 1
+      //Input_1_Integer: 1
+      //Input_2_Integer: 1
       //Assert: assertEquals(1L, (long)method_result.getTotal());
-      //Assert: assertEquals(1, (int)method_result.getPageSize());
       //Assert: assertEquals(1, (int)method_result.getTotalPage());
+      //Assert: assertEquals(1, (int)method_result.getPageSize());
+      //Assert: assertEquals(1, (int)method_result.getPageNum());
       
       OmsPortalOrderServiceImpl omsPortalOrderServiceImpl0 = new OmsPortalOrderServiceImpl();
       ArrayList<OmsOrderItem> arrayList0 = new ArrayList<OmsOrderItem>();
+      Long long0 = new Long(0L);
       //mock omsOrderItemMapper0
       OmsOrderItemMapper omsOrderItemMapper0 = mock(OmsOrderItemMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(arrayList0).when(omsOrderItemMapper0).selectByExample(any(com.macro.mall.model.OmsOrderItemExample.class));
       LinkedList<OmsOrder> linkedList0 = new LinkedList<OmsOrder>();
-      Integer integer0 = new Integer(65);
-      Long long0 = new Long(65);
+      Integer integer0 = new Integer(1);
       //mock omsOrderMapper0
       OmsOrderMapper omsOrderMapper0 = mock(OmsOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(linkedList0).when(omsOrderMapper0).selectByExample(any(com.macro.mall.model.OmsOrderExample.class));
       //mock omsOrder0
       OmsOrder omsOrder0 = mock(OmsOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+      
       linkedList0.add(omsOrder0);
       //mock umsMember0
       UmsMember umsMember0 = mock(UmsMember.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
@@ -1575,24 +1995,27 @@ public class OmsPortalOrderServiceImpl_SSTest extends OmsPortalOrderServiceImpl_
       //mock umsMemberService0
       UmsMemberService umsMemberService0 = mock(UmsMemberService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
       doReturn(umsMember0).when(umsMemberService0).getCurrentMember();
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "memberService", (Object) umsMemberService0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderMapper", (Object) omsOrderMapper0);
+      
       PrivateAccess.setVariable((Class<?>) OmsPortalOrderServiceImpl.class, omsPortalOrderServiceImpl0, "orderItemMapper", (Object) omsOrderItemMapper0);
       
       //Call method: list
       CommonPage<OmsOrderDetail> commonPage0 = omsPortalOrderServiceImpl0.list(integer0, integer0, integer0);
       
       //Test Result Assert
-      assertEquals(1, (int)commonPage0.getPageNum());
+      assertEquals(1L, (long)commonPage0.getTotal());
       
       //Test Result Assert
-      assertEquals(1L, (long)commonPage0.getTotal());
+      assertEquals(1, (int)commonPage0.getTotalPage());
       
       //Test Result Assert
       assertEquals(1, (int)commonPage0.getPageSize());
       
       //Test Result Assert
-      assertEquals(1, (int)commonPage0.getTotalPage());
+      assertEquals(1, (int)commonPage0.getPageNum());
   }
 
   }

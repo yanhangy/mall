@@ -74,7 +74,6 @@ public class OmsPortalOrderServiceImpl_SSTest_scaffolding {
   public static void setSystemProperties() {
  
     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
-    java.lang.System.setProperty("logback.configurationFile", "logback-ctg.xml"); 
     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
   }
   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
