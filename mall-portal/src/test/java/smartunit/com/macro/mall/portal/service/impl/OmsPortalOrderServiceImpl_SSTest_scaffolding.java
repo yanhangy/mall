@@ -74,7 +74,6 @@ public class OmsPortalOrderServiceImpl_SSTest_scaffolding {
   public static void setSystemProperties() {
  
     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
-    java.lang.System.setProperty("logback.configurationFile", "logback-ctg.xml"); 
     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
   }
   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
@@ -91,7 +90,6 @@ public class OmsPortalOrderServiceImpl_SSTest_scaffolding {
     mock(Class.forName("com.macro.mall.model.PmsSkuStock", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
     mock(Class.forName("com.macro.mall.model.SmsCoupon", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
     mock(Class.forName("com.macro.mall.model.SmsCouponHistory", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.macro.mall.model.SmsCouponProductCategoryRelation", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
     mock(Class.forName("com.macro.mall.model.SmsCouponProductRelation", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
     mock(Class.forName("com.macro.mall.model.UmsIntegrationConsumeSetting", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
     mock(Class.forName("com.macro.mall.model.UmsMember", false, OmsPortalOrderServiceImpl_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
