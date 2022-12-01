@@ -20,6 +20,7 @@ public class DemoServiceImpl implements DemoService {
     @Autowired
     private PmsBrandMapper brandMapper;
 
+
     @Override
     public List<PmsBrand> listAllBrand() {
         return brandMapper.selectByExample(new PmsBrandExample());
